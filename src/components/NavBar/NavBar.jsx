@@ -12,9 +12,9 @@ const NavBar = () => {
             </div> 
 
             <nav className = "nav__tabs">
-                <a className='nav-bar__link' href="#about">About</a>
-                <a className='nav-bar__link' href="#tour">Tour</a>
-                <a className='nav-bar__link' href="#merch">Merch</a>
+                <a className='nav__link' href="#about">About</a>
+                <a className='nav__link' href="#tour">Tour</a>
+                <a className='nav__link' href="#merch">Merch</a>
             </nav>
 
             <div className = "nav__cart">
