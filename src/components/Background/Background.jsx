@@ -3,13 +3,17 @@ import "./Background.scss";
 
 const Background = () => {
     return (
-        <>
-            <video className="background" autoPlay muted playsInline>
+        <div className="background">
+            <video 
+                className="background__video"
+                autoPlay
+                muted
+                playsInline
+            >
                 <source src={redEyesFade} type="video/mp4" />
             </video>
-        </>
+        </div>
     );
-
 };
 
 export default Background;

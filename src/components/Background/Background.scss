@@ -1,5 +1,15 @@
 .background{
     background: black;
-    height: 100vh;
-    width: auto;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+
+    &__video{
+        height: 100vh;
+        width: auto;
+    }
 }
