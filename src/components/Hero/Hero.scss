@@ -1,0 +1,16 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.hero {
+    &__buffer{
+        height: 100vh;
+    }
+    &__logo{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+
+        background: rgba(10,10,10,0.55);
+        backdrop-filter: blur(6px);
+    }
+}
