@@ -1,16 +1,19 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 .hero {
-    &__buffer{
-        height: 100vh;
-    }
+    animation: fadeIn 3s ease 2s;
+    animation-fill-mode: backwards;
+    background: rgba(10,10,10,0.55);
+    backdrop-filter: blur(6px);
     &__logo{
         display: flex;
         justify-content: center;
         align-self: center;
-
-        background: rgba(10,10,10,0.55);
-        backdrop-filter: blur(6px);
     }
 }
