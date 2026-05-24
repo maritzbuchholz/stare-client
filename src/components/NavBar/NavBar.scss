@@ -5,8 +5,7 @@
     background-color: black;
     display: flex;
     flex-direction: column;
-    padding: 2rem 2rem 2rem 2rem;
-    gap: 1.5rem;
+    padding: 1rem;
     border-bottom: 1px solid $color-primary-gold;
 
     box-sizing: border-box;
@@ -17,10 +16,10 @@
     @include tablet {
         flex-direction: row;
         justify-content: space-between;
-        padding: 2rem 2rem 2rem 2rem;
+        padding: 1rem;
     }
      @include desktop {
-        padding: 1rem 1rem 1rem 1rem;
+        padding: 1rem;
         margin: 0;
     }
 
@@ -29,38 +28,15 @@
         height: 4rem;
         width: auto;
     }
-    &__link{
-        font-family: $font-family-primary;
-    }
     &__tabs {
-        width: 100%;
-        max-width: 21.5rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-left: 1rem;
         @include tablet {
         width: auto;
         }
-
     }
-    &__tab {
-        text-decoration: none;
-        color: $color-secondary-cloud;
-        background-color: black;
-        border-radius: 20px;
-        padding: 0.5rem 2rem;
-             @include tablet {
-                padding: 0.5rem 1rem;     
+    &__link{
+        font-family: $font-family-primary;
     }
-        &--active {
-            background-color: black;
-          
-            color: $color-primary-white;
-        
-            
-        }
-
-    }
-
 }
