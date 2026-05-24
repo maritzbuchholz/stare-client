@@ -10,8 +10,9 @@
     z-index: 1;
 
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: row;
+    justify-content: space-between;
+
     padding: 1rem;
     box-sizing: border-box;
 
@@ -35,12 +36,19 @@
 
         &--open {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            
             @include tablet {
-                flex-direction: row;
+                display: none;
             }
         }
 
+        @include tablet {
+            display: none;
+        }
+    }
+    &__tabs--full {
+        display: none;
         @include tablet {
             display: flex;
             justify-content: space-between;
@@ -49,8 +57,6 @@
     }
     &__burger{
         display: flex;
-
-
         background: none;
         border: none;
         color: white;
@@ -70,16 +76,5 @@
         @include tablet {
             padding: 0 1rem;
         }
-    }
-    &__cart{
-        position: absolute;
-        top: 2.25rem;
-        right: 1rem;
-    @include tablet {
-            position: relative;
-            top: 0;
-            right: 0;
-        }
-
     }
 }
