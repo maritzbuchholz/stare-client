@@ -36,6 +36,9 @@
         &--open {
             display: flex;
             flex-direction: column;
+            @include tablet {
+                flex-direction: row;
+            }
         }
 
         @include tablet {
@@ -45,9 +48,8 @@
         }
     }
     &__burger{
-        position: absolute;
-        top: 1.5rem;
-        right: 1rem;
+        display: flex;
+
 
         background: none;
         border: none;
@@ -68,5 +70,16 @@
         @include tablet {
             padding: 0 1rem;
         }
+    }
+    &__cart{
+        position: absolute;
+        top: 2.25rem;
+        right: 1rem;
+    @include tablet {
+            position: relative;
+            top: 0;
+            right: 0;
+        }
+
     }
 }

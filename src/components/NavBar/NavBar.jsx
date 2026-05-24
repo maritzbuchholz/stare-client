@@ -23,8 +23,6 @@ const NavBar = () => {
                 <a className='nav__link' href="#merch">Merch</a>
             </nav>
 
-
-
             <div className = "nav__cart">
                 <img src={Cart} alt="Shopping Cart" />
             </div>
