@@ -9,24 +9,25 @@ const NavBar = () => {
 
     return (
         <header className = "nav">
-            <div className = "nav__logo">
-                <img src={StareLogoTrasparent} alt="Stare Logo" />
+            <div className = "nav__top">
+                <div className = "nav__logo">
+                    <img src={StareLogoTrasparent} alt="Stare Logo" />
+                </div>
+                
+                <button class="nav__burger" onClick={() => setMenuOpen(!menuOpen)}>
+                    ☰
+                </button>
+
+                <nav className={"nav__tabs--full"}>
+                    <a className='nav__link' href="#about">About</a>
+                    <a className='nav__link' href="#tour">Tour</a>
+                    <a className='nav__link' href="#merch">Merch</a>
+                </nav>
+
+                <div className = "nav__cart">
+                    <img src={Cart} alt="Shopping Cart" />
+                </div>
             </div>
-            
-            <button class="nav__burger" onClick={() => setMenuOpen(!menuOpen)}>
-                ☰
-            </button>
-
-            <nav className={"nav__tabs--full"}>
-                <a className='nav__link' href="#about">About</a>
-                <a className='nav__link' href="#tour">Tour</a>
-                <a className='nav__link' href="#merch">Merch</a>
-            </nav>
-
-            <div className = "nav__cart">
-                <img src={Cart} alt="Shopping Cart" />
-            </div>
-
             <nav className={`nav__tabs ${menuOpen ? "nav__tabs--open" : ""}`}>
                 <a className='nav__link' href="#about">About</a>
                 <a className='nav__link' href="#tour">Tour</a>
