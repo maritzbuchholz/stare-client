@@ -3,20 +3,22 @@
 
 .nav {
     background-color: black;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
     border-bottom: 1px solid $color-primary-gold;
 
-    box-sizing: border-box;
     position: fixed;
     width: 100%;
     z-index: 1;
 
+    display: flex;
+    flex-direction: column;
+    
+    padding: 1rem;
+    box-sizing: border-box;
+
     @include tablet {
         flex-direction: row;
         justify-content: space-between;
-        padding: 1rem;
+        align-items: center;
     }
      @include desktop {
         padding: 1rem;
@@ -29,14 +31,42 @@
         width: auto;
     }
     &__tabs {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: none;
+
+        &--open {
+            display: flex;
+            flex-direction: column;
+        }
+
         @include tablet {
-        width: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
     }
-    &__link{
+    &__burger{
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+
+        @include tablet {
+            display: none;
+        }
+    }
+    &__link {
+        color: white;
+        text-decoration: none;
+        padding: 1rem 0;
         font-family: $font-family-primary;
+
+        @include tablet {
+            padding: 0 1rem;
+        }
     }
 }
