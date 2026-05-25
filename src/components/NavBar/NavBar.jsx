@@ -18,7 +18,7 @@ const NavBar = () => {
                     ☰
                 </button>
 
-                <nav className={"nav__tabs--full"}>
+                <nav className={"nav__tabs-tablet"}>
                     <a className='nav__link' href="#about">About</a>
                     <a className='nav__link' href="#tour">Tour</a>
                     <a className='nav__link' href="#merch">Merch</a>
@@ -28,7 +28,8 @@ const NavBar = () => {
                     <img src={Cart} alt="Shopping Cart" />
                 </div>
             </div>
-            <nav className={`nav__tabs ${menuOpen ? "nav__tabs--open" : ""}`}>
+
+            <nav className={`nav__tabs-mobile ${menuOpen ? "nav__tabs-mobile--open" : ""}`}>
                 <a className='nav__link' href="#about">About</a>
                 <a className='nav__link' href="#tour">Tour</a>
                 <a className='nav__link' href="#merch">Merch</a>

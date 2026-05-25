@@ -20,7 +20,7 @@
         justify-content: space-between;
         align-items: center;
     }
-     @include desktop {
+    @include desktop {
         padding: 1rem;
         margin: 0;
     }
@@ -37,24 +37,20 @@
         height: 4rem;
         width: auto;
     }
-    &__tabs {
-        display: none;
 
+    &__tabs-mobile {
+        display: none;
         &--open {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            
             @include tablet {
                 display: none;
             }
         }
-
-        @include tablet {
-            display: none;
-        }
     }
-    &__tabs--full {
+
+    &__tabs-tablet {
         display: none;
         @include tablet {
             display: flex;
@@ -66,7 +62,7 @@
         display: flex;
         background: none;
         border: none;
-        color: white;
+        color: $color-primary-gold;
         font-size: 2rem;
         cursor: pointer;
 
@@ -75,7 +71,7 @@
         }
     }
     &__link {
-        color: white;
+        color: $color-primary-gold;
         text-decoration: none;
         padding: 1rem 0;
         font-family: $font-family-primary;
