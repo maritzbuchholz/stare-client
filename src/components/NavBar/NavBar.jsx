@@ -16,7 +16,7 @@ const NavBar = () => {
                     <img src={StareLogoTrasparent} alt="Stare Logo" />
                 </div>
                 
-                <button class="nav__burger" onClick={() => setMenuOpen(!menuOpen)}>
+                <button className="nav__burger" onClick={() => setMenuOpen(!menuOpen)}>
                     <img src={menuOpen ? Close : Burger} alt="Menu Item" />
                 </button>
 
