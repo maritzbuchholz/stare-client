@@ -11,9 +11,17 @@
     animation-fill-mode: backwards;
     background: rgba(10,10,10,0.55);
     backdrop-filter: blur(6px);
-    &__logo{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    &__logo-container{
         display: flex;
         justify-content: center;
         align-self: center;
+    }
+    &__logo{
+        width: 100%;
     }
 }
