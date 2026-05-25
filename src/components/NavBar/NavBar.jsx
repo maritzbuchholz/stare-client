@@ -1,6 +1,7 @@
 import { useState } from "react";
 import StareLogoTrasparent from "../../assets/logo/stareLogoTransparent.png";
 import Cart from "../../assets/icons/cart.svg";
+import Burger from "../../assets/icons/burger.svg";
 import "./NavBar.scss";
 
 
@@ -15,7 +16,7 @@ const NavBar = () => {
                 </div>
                 
                 <button class="nav__burger" onClick={() => setMenuOpen(!menuOpen)}>
-                    ☰
+                    <img src={Burger} alt="Burger" />
                 </button>
 
                 <nav className={"nav__tabs-tablet"}>

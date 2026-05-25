@@ -64,8 +64,9 @@
         background: none;
         border: none;
         color: $color-primary-gold;
-        font-size: 2rem;
         cursor: pointer;
+        padding: 0;
+        margin: 0;
         @include tablet {
             display: none;
         }
@@ -81,8 +82,9 @@
     &__link {
         color: $color-primary-gold;
         text-decoration: none;
-        padding: 1rem 0;
         font-family: $font-family-primary;
+        width: 4rem;
+        text-align: center;
         @include tablet {
             padding: 0 1rem;
         }
