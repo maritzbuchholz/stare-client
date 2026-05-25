@@ -58,6 +58,7 @@
             align-items: center;
         }
     }
+    
     &__burger{
         display: flex;
         background: none;
@@ -65,17 +66,23 @@
         color: $color-primary-gold;
         font-size: 2rem;
         cursor: pointer;
-
         @include tablet {
             display: none;
         }
     }
+
+    &__cart{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 0.5rem 0 0.5rem 3.5rem; //sets shopping cart to logo size
+    }
+
     &__link {
         color: $color-primary-gold;
         text-decoration: none;
         padding: 1rem 0;
         font-family: $font-family-primary;
-
         @include tablet {
             padding: 0 1rem;
         }
