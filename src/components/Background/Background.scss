@@ -1,3 +1,6 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
 .background{
     background: black;
     position: fixed;
@@ -7,8 +10,17 @@
     pointer-events: none;
     display: flex;
     justify-content: center;
-
+    &__screen{
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        animation: fadeIn 3s ease 2s;
+        animation-fill-mode: backwards;
+        background: rgba(10,10,10,0.55);
+        backdrop-filter: blur(6px);
+    }
     &__video{
+        z-index: 0;
         height: 100vh;
         width: auto;
         max-width: 100vw;
