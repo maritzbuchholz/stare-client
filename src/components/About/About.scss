@@ -1,0 +1,13 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.about{
+    text-align: center;
+    margin-top: 4rem;
+    &__title{
+        color: $color-primary-gold
+    }
+    &__description{
+        color: $color-primary-white
+    }
+}
