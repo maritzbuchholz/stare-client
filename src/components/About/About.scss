@@ -3,11 +3,14 @@
 
 .about{
     text-align: center;
-    margin-top: 4rem;
+    margin: 10rem 0;
     &__title{
-        color: $color-primary-gold
+        color: $color-primary-gold   
     }
     &__description{
         color: $color-primary-white
+    }
+    &__name{
+        color: $color-primary-gold
     }
 }
