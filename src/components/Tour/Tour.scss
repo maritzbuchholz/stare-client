@@ -3,11 +3,14 @@
 
 .tour {
     display: flex;
-    justify-content: center;
     align-self: center;
+    flex-direction: column;
+    text-align: center;
     width: 100%;
     @include desktop{
         max-width: 1200px;
     }
-    
+    &__title{
+        color: $color-primary-gold   
+    }
 }

@@ -4,11 +4,12 @@
 .event {
     display: flex;
     flex-direction: column;
+    align-self: center;
     width: 100%;
     color: $color-primary-white;
     border: 1px solid $color-primary-gold;
     padding: 1rem;
-    @include desktop{
+    @include tablet{
         max-width: 500px;
     }
     &__top{
