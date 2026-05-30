@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar/NavBar.jsx";
 import Background from "./components/Background/Background.jsx";
 import Hero from "./components/Hero/Hero.jsx";
 import About from "./components/About/About.jsx";
+import Tour from "./components/Tour/Tour.jsx";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ function App() {
       <NavBar />
       <Hero />
       <About />
+      <Tour />
     </div>
   )
 }
