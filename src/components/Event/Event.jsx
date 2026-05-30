@@ -2,15 +2,21 @@ import "./Event.scss";
 import Button from "../Button/Button.jsx"
 
 
-const Event = () => {
+const Event = ({
+    date,
+    venue,
+    location
+}) => {
     return (
         <section className = "event">
             <div className="event__top">
-                <p className="event__date">June 6, 2026</p>
+                <p className="event__date">{date}</p>
             </div>
             <div className="event__bottom">
-                <p className="event__venue">Brooklyn Monarch</p>
-                <p className="event__location">Brooklyn, NY</p>
+                <div className="event__text">
+                    <p className="event__venue">{venue}</p>
+                    <p className="event__location">{location}</p>
+                </div>
                 <Button />
             </div>
         </section>
