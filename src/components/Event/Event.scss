@@ -1,9 +1,6 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
-.tour {
-    @include desktop{
-        max-width: 1200px;
-    }
-    
+.event {
+    display: flex;
 }
