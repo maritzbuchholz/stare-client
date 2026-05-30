@@ -1,0 +1,22 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.button{
+    font-family: $font-family-primary;
+    background: $color-background-black;
+    border: $color-primary-gold 1px solid;
+    border-radius: 5px;
+    color: $color-primary-gold;
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    
+    &:hover{
+        background: #222222;
+    }
+    &:active{
+        background: $color-background-black;
+        color: $color-primary-white;
+        border: $color-primary-white 1px solid;
+    }
+}

@@ -6,8 +6,8 @@ import "./Hero.scss";
 const Hero = () => {
     return (
         <header className = "hero">
-            <div className = "hero__logo">
-                <img src={StareLogoTransparent} alt="Stare Logo" />
+            <div className = "hero__logo-container">
+                <img className = "hero__logo" src={StareLogoTransparent} alt="Stare Logo" />
             </div> 
         </header>
     );
