@@ -8,6 +8,7 @@
     width: 100%;
     color: $color-primary-white;
     border: 1px solid $color-primary-gold;
+    border-radius: 5px;
     padding: 1rem;
     @include tablet{
         max-width: 500px;

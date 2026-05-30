@@ -1,4 +1,5 @@
 import "./Event.scss";
+import Button from "../Button/Button.jsx"
 
 
 const Event = () => {
@@ -10,7 +11,7 @@ const Event = () => {
             <div className="event__bottom">
                 <p className="event__venue">Brooklyn Monarch</p>
                 <p className="event__location">Brooklyn, NY</p>
-                <button className="event__tickets">Tickets</button>
+                <Button />
             </div>
         </section>
     );
