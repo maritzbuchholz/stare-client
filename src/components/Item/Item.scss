@@ -1,0 +1,16 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.item {
+    border: solid 1px $color-primary-gold;
+    width: 300px;
+    height: 300px;
+    padding: 1rem;
+    &__picture{
+        width: 100px;
+        height: 100px;
+    }
+    &__label{
+        color: $color-primary-white;
+    }
+}
