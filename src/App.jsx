@@ -5,6 +5,7 @@ import Background from "./components/Background/Background.jsx";
 import Hero from "./components/Hero/Hero.jsx";
 import About from "./components/About/About.jsx";
 import Tour from "./components/Tour/Tour.jsx";
+import Merch from "./components/Merch/Merch.jsx";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
       <Hero />
       <About />
       <Tour />
+      <Merch />
     </div>
   )
 }
