@@ -1,0 +1,21 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    border-top: 1px $color-primary-gold solid;
+    width: 100%;
+    padding: 1rem 1rem 1rem 2rem;
+    box-sizing: border-box;
+    &__logo {
+        align-self: center;
+        display: flex;
+        height: 4rem;
+        width: auto;
+    }
+    &__copyright{
+        color: $color-primary-gold;
+    }
+}
