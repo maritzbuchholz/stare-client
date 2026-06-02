@@ -9,8 +9,10 @@ const Footer = () => {
                 <img className = "footer__nyhc" src={NYHC} alt="New York Hardcore icon" />
             </div>
             <div className = "footer__right">
-                <img className = "footer__insta" src={Insta} alt="Instragram icon" />
                 <p className = "footer__copyright">© 2026 Stare. All rights reserved.</p>
+                <a className = "footer__insta-link" href="#">
+                    <img className = "footer__insta" src={Insta} alt="Instragram icon" />
+                </a>
             </div>
         </footer>
     );

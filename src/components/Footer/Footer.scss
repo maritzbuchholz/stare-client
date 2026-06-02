@@ -15,7 +15,19 @@
         height: 4rem;
         width: auto;
     }
+    &__right{
+        text-align: end;
+    }
+    &__insta{
+        height: 2rem;
+    }
     &__copyright{
         color: $color-primary-gold;
+        margin: 0;
+        margin-bottom: 1rem;
+        width: 8rem;
+        @include tablet{
+            width: auto;
+        }
     }
 }
