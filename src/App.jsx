@@ -6,6 +6,7 @@ import Hero from "./components/Hero/Hero.jsx";
 import About from "./components/About/About.jsx";
 import Tour from "./components/Tour/Tour.jsx";
 import Merch from "./components/Merch/Merch.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
       <About />
       <Tour />
       <Merch />
+      <Footer />
     </div>
   )
 }

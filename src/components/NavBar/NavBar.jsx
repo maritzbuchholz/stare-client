@@ -21,6 +21,7 @@ const NavBar = () => {
                 </button>
 
                 <nav className={"nav__tabs-tablet"}>
+                    <a className='nav__link' href="#about">Home</a>
                     <a className='nav__link' href="#about">About</a>
                     <a className='nav__link' href="#tour">Tour</a>
                     <a className='nav__link' href="#merch">Merch</a>
@@ -32,6 +33,7 @@ const NavBar = () => {
             </div>
 
             <nav className={`nav__tabs-mobile ${menuOpen ? "nav__tabs-mobile--open" : ""}`}>
+                <a className='nav__link' href="#about">Home</a>
                 <a className='nav__link' href="#about">About</a>
                 <a className='nav__link' href="#tour">Tour</a>
                 <a className='nav__link' href="#merch">Merch</a>

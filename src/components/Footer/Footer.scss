@@ -1,0 +1,33 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    border-top: 1px $color-primary-gold solid;
+    width: 100%;
+    padding: 1rem 1rem 1rem 2rem;
+    box-sizing: border-box;
+    &__logo {
+        align-self: center;
+        display: flex;
+        height: 4rem;
+        width: auto;
+    }
+    &__right{
+        text-align: end;
+    }
+    &__insta{
+        height: 2rem;
+    }
+    &__copyright{
+        color: $color-primary-gold;
+        margin: 0;
+        margin-bottom: 1rem;
+        width: 8rem;
+        @include tablet{
+            width: auto;
+        }
+    }
+}
