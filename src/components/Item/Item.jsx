@@ -20,7 +20,7 @@ const Item = () => {
                 <label className = "item__label">Quantity</label>
                 <input type="number" id="quantity" name="quantity" min="0" max="100" step="1" />
             </div>
-            <Button text="Add to Cart" />
+            <Button text="Add to Cart" classname="item__button" />
         </section>
     );
 

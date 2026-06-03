@@ -1,9 +1,11 @@
 import "./Button.scss";
 
-const Button = ({text}) => {
+const Button = ({
+    text,
+    classname}) => {
     return (
         <>
-            <button className="button">{text}</button>
+            <button className={`button ${classname}`}>{text}</button>
         </>
     );
 };
