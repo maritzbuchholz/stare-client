@@ -16,4 +16,13 @@
     &__button{
         padding: 0.5rem 2rem;
     }
+    &__description{
+        color: $color-primary-white;
+    }
+    &__quantity-section{
+        margin: 1rem 0;
+    }
+    &__size-section{
+        margin: 1rem 0;
+    }
 }
