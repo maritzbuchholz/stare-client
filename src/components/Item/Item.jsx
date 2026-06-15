@@ -8,8 +8,8 @@ const Item = () => {
             <img className = "item__picture" src={Placeholder} alt="Placeholder item photo" />
             <h3 className = "item__description">Shirt</h3>
             <div>
-                <label className = "item__label">Size</label>
-                <select>
+                <label className = "item__label" htmlFor="item__size">Size</label>
+                <select id="item__size" name="size">
                     <option value="small">S</option>
                     <option value="medium">M</option>
                     <option value="large">L</option>
