@@ -20,9 +20,23 @@
         color: $color-primary-white;
     }
     &__quantity-section{
-        margin: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        margin: 1rem 4rem;
+
     }
     &__size-section{
-        margin: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        margin: 1rem 4rem;
     }
+}
+#size{
+    background-color: black;
+    color: $color-primary-white;
+    border: solid 1px $color-primary-gold;
+    border-radius: 3px;
+    font-family: $font-family-primary;
 }

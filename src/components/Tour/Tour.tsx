@@ -1,5 +1,5 @@
 import "./Tour.scss";
-import Event from "../Event/Event.jsx"
+import Event from "../Event/Event"
 
 
 const Tour = () => {
