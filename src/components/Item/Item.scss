@@ -32,6 +32,15 @@
         box-sizing: border-box;
         margin: 1rem 4rem;
     }
+    &__quantity-controls{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    &__quantity-btn{
+        padding: 0.25rem;
+        border: none;
+    }
 }
 #size{
     background-color: black;
@@ -40,3 +49,8 @@
     border-radius: 3px;
     font-family: $font-family-primary;
 }
+#quantity::-webkit-outer-spin-button,
+#quantity::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
