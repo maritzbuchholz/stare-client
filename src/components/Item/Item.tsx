@@ -1,5 +1,5 @@
 import "./Item.scss";
-import Button from "../Button/Button.tsx"
+import Button from "../Button/Button"
 import Placeholder from "../../assets/placeholder.png";
 
 const Item = () => {
