@@ -9,7 +9,7 @@ const Item = () => {
         setQuantity(prev => Math.max(0, prev - 1));
     };
     const incrementQuantity = () => {
-        setQuantity(prev => prev + 1);
+        setQuantity(prev => Math.min(15, prev + 1));
     };
     return (
         <section className = "item">
@@ -28,7 +28,7 @@ const Item = () => {
                 <label className = "item__label">Quantity</label>
                 <div className="item__quantity-controls">
                     <Button onClick={decrementQuantity} text="-" classname="item__quantity-btn" />
-                    <input type="number" id="quantity" name="quantity" min="0" max="100" step="1" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value) || 0)} />
+                    <input type="number" id="quantity" name="quantity" min="0" max="15" step="1" value={quantity} readOnly />
                     <Button onClick={incrementQuantity} text="+" classname="item__quantity-btn" />
                 </div>
             </div>
