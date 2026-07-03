@@ -1,8 +1,16 @@
 import "./Item.scss";
 import Button from "../Button/Button"
 import Placeholder from "../../assets/placeholder.png";
+import { useState } from "react";
 
 const Item = () => {
+    const [quantity, setQuantity] = useState(0);
+    const decrementQuantity = () => {
+        setQuantity(prev => Math.max(0, prev - 1));
+    };
+    const incrementQuantity = () => {
+        setQuantity(prev => prev + 1);
+    };
     return (
         <section className = "item">
             <img className = "item__picture" src={Placeholder} alt="Placeholder item photo" />
@@ -19,9 +27,9 @@ const Item = () => {
             <div className = "item__quantity-section">
                 <label className = "item__label">Quantity</label>
                 <div className="item__quantity-controls">
-                    <Button text="-" classname="item__quantity-btn" />
-                    <input type="number" id="quantity" name="quantity" min="0" max="100" step="1" />
-                    <Button text="+" classname="item__quantity-btn" />
+                    <Button onClick={decrementQuantity} text="-" classname="item__quantity-btn" />
+                    <input type="number" id="quantity" name="quantity" min="0" max="100" step="1" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value) || 0)} />
+                    <Button onClick={incrementQuantity} text="+" classname="item__quantity-btn" />
                 </div>
             </div>
             <Button text="Add to Cart" classname="item__button" />

@@ -3,14 +3,18 @@ import "./Button.scss";
 type ButtonProps = {
     text: string;
     classname?: string;
+    onClick?: () => void;
 }
 
 const Button = ({
     text,
-    classname}: ButtonProps) => {
+    classname,
+    onClick}: ButtonProps) => {
     return (
         <>
-            <button className={`button ${classname}`}>{text}</button>
+            <button className={`button ${classname}`} onClick={onClick}>
+                {text}
+            </button>
         </>
     );
 };
