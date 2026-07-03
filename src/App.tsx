@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import './App.scss'
-import NavBar from "./components/NavBar/NavBar.tsx";
-import Background from "./components/Background/Background.tsx";
-import Hero from "./components/Hero/Hero.tsx";
-import About from "./components/About/About.tsx";
-import Tour from "./components/Tour/Tour.tsx";
-import Merch from "./components/Merch/Merch.tsx";
-import Footer from "./components/Footer/Footer.tsx";
+import NavBar from "./components/NavBar/NavBar";
+import Background from "./components/Background/Background";
+import Hero from "./components/Hero/Hero";
+import About from "./components/About/About";
+import Tour from "./components/Tour/Tour";
+import Merch from "./components/Merch/Merch";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [count, setCount] = useState(0)
