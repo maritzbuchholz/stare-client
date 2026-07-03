@@ -1,12 +1,17 @@
 import "./Event.scss";
-import Button from "../Button/Button.tsx"
+import Button from "../Button/Button"
 
+type EventProps = {
+    date: string;
+    venue: string;
+    location: string;
+}
 
 const Event = ({
     date,
     venue,
     location
-}) => {
+}: EventProps) => {
     return (
         <section className = "event">
             <div className="event__top">

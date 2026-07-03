@@ -1,11 +1,16 @@
 import "./Button.scss";
 
+type ButtonProps = {
+    text: string;
+    classname?: string;
+}
+
 const Button = ({
     text,
-    classname}) => {
+    classname}: ButtonProps) => {
     return (
         <>
-            <button className={`button ${classname}`}>{text}</button>
+            <button className={`button ${classname}`}>{text}: Props</button>
         </>
     );
 };
