@@ -1,5 +1,5 @@
 import "./Event.scss";
-import Button from "../Button/Button.jsx"
+import Button from "../Button/Button.tsx"
 
 
 const Event = ({
