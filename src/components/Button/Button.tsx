@@ -10,7 +10,7 @@ const Button = ({
     classname}: ButtonProps) => {
     return (
         <>
-            <button className={`button ${classname}`}>{text}: Props</button>
+            <button className={`button ${classname}`}>{text}</button>
         </>
     );
 };

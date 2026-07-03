@@ -18,7 +18,11 @@ const Item = () => {
             </div>
             <div className = "item__quantity-section">
                 <label className = "item__label">Quantity</label>
-                <input type="number" id="quantity" name="quantity" min="0" max="100" step="1" />
+                <div className="item__quantity-controls">
+                    <Button text="-" classname="item__quantity-btn" />
+                    <input type="number" id="quantity" name="quantity" min="0" max="100" step="1" />
+                    <Button text="+" classname="item__quantity-btn" />
+                </div>
             </div>
             <Button text="Add to Cart" classname="item__button" />
         </section>
