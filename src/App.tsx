@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import axios from "axios";
+import { useState, useEffect } from 'react'
 import './App.scss'
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 import NavBar from "./components/NavBar/NavBar";
 import Background from "./components/Background/Background";
 import Hero from "./components/Hero/Hero";
@@ -8,8 +10,21 @@ import Tour from "./components/Tour/Tour";
 import Merch from "./components/Merch/Merch";
 import Footer from "./components/Footer/Footer";
 
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [products, setProducts] = useState([])
+  
+    useEffect(() => {
+        const fetchProducts = async () => {
+          try {
+              const res = await axios.get(`${baseUrl}/products`);
+              setProducts(res.data);
+          } catch (err) {
+              console.error(`Failed to fetch products`);
+          }
+        }
+        fetchProducts();
+    }, []);
 
   return (
     <div className = "app-layout">
