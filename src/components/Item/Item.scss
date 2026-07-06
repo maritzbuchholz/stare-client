@@ -24,22 +24,12 @@
         justify-content: space-between;
         box-sizing: border-box;
         margin: 1rem 4rem;
-
     }
     &__size-section{
         display: flex;
         justify-content: space-between;
         box-sizing: border-box;
         margin: 1rem 4rem;
-    }
-    &__quantity-controls{
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    &__quantity-btn{
-        padding: 0.25rem;
-        border: none;
     }
 }
 #size, #quantity{
