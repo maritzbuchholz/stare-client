@@ -1,20 +1,34 @@
 import "./Item.scss";
 import Button from "../Button/Button"
 import Placeholder from "../../assets/placeholder.png";
-import { useState } from "react";
 
-const Item = () => {
-    const [quantity, setQuantity] = useState(0);
-    const decrementQuantity = () => {
-        setQuantity(prev => Math.max(0, prev - 1));
-    };
-    const incrementQuantity = () => {
-        setQuantity(prev => Math.min(15, prev + 1));
-    };
+type Product = {
+  id: number;
+  name: string;
+  description: string;
+  price_cents: number;
+  image_url: string;
+  variants: ProductVariant[];
+}
+
+type ProductVariant = {
+  id: number;
+  inventory_count: number;
+  size: string;
+  sku: string;
+}
+
+type ItemProps = {
+    product: Product;
+}
+
+const Item = ({product}: ItemProps) => {
+    const n = 30;
+    const quantityLimit = [...Array(n + 1).keys()];
     return (
         <section className = "item">
             <img className = "item__picture" src={Placeholder} alt="Placeholder item photo" />
-            <h3 className = "item__description">Shirt</h3>
+            <h3 className = "item__description">{product.name}</h3>
             <div className = "item__size-section">
                 <label className = "item__label" htmlFor="item__size">Size</label>
                 <select id="size" name="size">
@@ -27,15 +41,18 @@ const Item = () => {
             <div className = "item__quantity-section">
                 <label className = "item__label">Quantity</label>
                 <div className="item__quantity-controls">
-                    <Button onClick={decrementQuantity} text="-" classname="item__quantity-btn" />
-                    <input type="number" id="quantity" name="quantity" min="0" max="15" step="1" value={quantity} readOnly />
-                    <Button onClick={incrementQuantity} text="+" classname="item__quantity-btn" />
+                    <select id="quantity" name="quantity">
+                        {quantityLimit.map((i) => (
+                            <option key={i} value={i}>
+                                {i}
+                            </option>
+                        ))}
+                    </select>
                 </div>
             </div>
             <Button text="Add to Cart" classname="item__button" />
         </section>
     );
-
 };
 
 export default Item;
