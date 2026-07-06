@@ -12,19 +12,19 @@ import Footer from "./components/Footer/Footer";
 
 
 function App() {
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState<any[]>([]);
   
-    useEffect(() => {
-        const fetchProducts = async () => {
-          try {
-              const res = await axios.get(`${baseUrl}/products`);
-              setProducts(res.data);
-          } catch (err) {
-              console.error(`Failed to fetch products`);
-          }
-        }
-        fetchProducts();
-    }, []);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+          const res = await axios.get(`${baseUrl}/products`);
+          setProducts(res.data);
+      } catch (error) {
+          console.error(`Failed to fetch products`);
+      }
+    }
+    fetchProducts();
+  }, []);
 
   return (
     <div className = "app-layout">
@@ -33,7 +33,7 @@ function App() {
       <Hero />
       <About />
       <Tour />
-      <Merch />
+      <Merch products={products} setProducts={setProducts} />
       <Footer />
     </div>
   )

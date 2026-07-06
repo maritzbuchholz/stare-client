@@ -3,7 +3,12 @@ import Button from "../Button/Button"
 import Placeholder from "../../assets/placeholder.png";
 import { useState } from "react";
 
-const Item = () => {
+type ItemProps = {
+    products?: any[];
+    setProducts?: (products: any[]) => void;
+}
+
+const Item = ({products, setProducts}: ItemProps) => {
     const [quantity, setQuantity] = useState(0);
     const decrementQuantity = () => {
         setQuantity(prev => Math.max(0, prev - 1));
