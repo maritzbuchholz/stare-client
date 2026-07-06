@@ -10,6 +10,7 @@ type ItemProps = {
 const Item = ({product}: ItemProps) => {
     const n = 30;
     const quantityLimit = [...Array(n + 1).keys()];
+    const sizeArray = product.variants.map((variant) => variant.size);
     return (
         <section className = "item">
             <img className = "item__picture" src={Placeholder} alt="Placeholder item photo" />
@@ -17,10 +18,7 @@ const Item = ({product}: ItemProps) => {
             <div className = "item__size-section">
                 <label className = "item__label" htmlFor="item__size">Size</label>
                 <select id="size" name="size">
-                    <option value="small">S</option>
-                    <option value="medium">M</option>
-                    <option value="large">L</option>
-                    <option value="xl">XL</option>
+                    {sizeArray.map((size) => <option value={size}>{size}</option>)}
                 </select>
             </div>
             <div className = "item__quantity-section">

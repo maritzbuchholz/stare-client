@@ -7,7 +7,6 @@ type MerchProps ={
 }
 
 const Merch = ({products}: MerchProps) => {
-    console.log(products);
     return (
         <div className="merch">
             <h1 className="merch__title">Merch</h1>

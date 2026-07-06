@@ -14,7 +14,7 @@ const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
-  console.log(products)
+  
   useEffect(() => {
     const fetchProducts = async () => {
       try {
