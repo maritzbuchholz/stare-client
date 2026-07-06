@@ -1,22 +1,7 @@
 import "./Item.scss";
 import Button from "../Button/Button"
 import Placeholder from "../../assets/placeholder.png";
-
-type Product = {
-  id: number;
-  name: string;
-  description: string;
-  price_cents: number;
-  image_url: string;
-  variants: ProductVariant[];
-}
-
-type ProductVariant = {
-  id: number;
-  inventory_count: number;
-  size: string;
-  sku: string;
-}
+import Product from "../../types/product";
 
 type ItemProps = {
     product: Product;
