@@ -16,10 +16,14 @@ const Item = ({product}: ItemProps) => {
             <img className = "item__picture" src={Placeholder} alt="Placeholder item photo" />
             <h3 className = "item__description">{product.name}</h3>
             <div className = "item__size-section">
-                <label className = "item__label" htmlFor="item__size">Size</label>
-                <select id="size" name="size">
-                    {sizeArray.map((size) => <option value={size}>{size}</option>)}
-                </select>
+                { sizeArray.length > 1 ?
+                <>
+                    <label className = "item__label" htmlFor="item__size">Size</label>
+                    <select id="size" name="size">
+                        {sizeArray.map((size) => <option value={size}>{size}</option>)}
+                    </select>
+                </>
+                : null}
             </div>
             <div className = "item__quantity-section">
                 <label className = "item__label">Quantity</label>
