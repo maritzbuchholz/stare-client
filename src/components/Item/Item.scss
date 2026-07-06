@@ -42,15 +42,10 @@
         border: none;
     }
 }
-#size{
+#size, #quantity{
     background-color: black;
     color: $color-primary-white;
     border: solid 1px $color-primary-gold;
     border-radius: 3px;
     font-family: $font-family-primary;
 }
-#quantity::-webkit-outer-spin-button,
-#quantity::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }

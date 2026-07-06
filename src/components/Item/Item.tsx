@@ -9,13 +9,8 @@ type ItemProps = {
 }
 
 const Item = ({products, setProducts}: ItemProps) => {
-    const [quantity, setQuantity] = useState(0);
-    const decrementQuantity = () => {
-        setQuantity(prev => Math.max(0, prev - 1));
-    };
-    const incrementQuantity = () => {
-        setQuantity(prev => Math.min(15, prev + 1));
-    };
+    const n = 30;
+    const quantityLimit = [...Array(n + 1).keys()];
     return (
         <section className = "item">
             <img className = "item__picture" src={Placeholder} alt="Placeholder item photo" />
@@ -32,9 +27,13 @@ const Item = ({products, setProducts}: ItemProps) => {
             <div className = "item__quantity-section">
                 <label className = "item__label">Quantity</label>
                 <div className="item__quantity-controls">
-                    <Button onClick={decrementQuantity} text="-" classname="item__quantity-btn" />
-                    <input type="number" id="quantity" name="quantity" min="0" max="15" step="1" value={quantity} readOnly />
-                    <Button onClick={incrementQuantity} text="+" classname="item__quantity-btn" />
+                    <select id="quantity" name="quantity">
+                        {quantityLimit.map((i) => (
+                            <option key={i} value={i}>
+                                {i}
+                            </option>
+                        ))}
+                    </select>
                 </div>
             </div>
             <Button text="Add to Cart" classname="item__button" />
