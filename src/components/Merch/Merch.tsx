@@ -1,16 +1,32 @@
 import "./Merch.scss";
 import Item from "../Item/Item";
 
-type MerchProps = {
-    products?: any[];
-    setProducts?: (products: any[]) => void;
+type Product = {
+  id: number;
+  name: string;
+  description: string;
+  price_cents: number;
+  image_url: string;
+  variants: ProductVariant[];
 }
 
-const Merch = ({products, setProducts}: MerchProps) => {
+type ProductVariant = {
+  id: number;
+  inventory_count: number;
+  size: string;
+  sku: string;
+}
+
+type MerchProps ={
+    products: Product[];
+}
+
+const Merch = ({products}: MerchProps) => {
+    console.log(products);
     return (
         <div className="merch">
             <h1 className="merch__title">Merch</h1>
-            <Item  products={products} setProducts={setProducts} />
+            {products.map((product) => <Item product={product} key={product.id} />)}
         </div>
     );
 

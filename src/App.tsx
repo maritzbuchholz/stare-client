@@ -11,16 +11,32 @@ import Merch from "./components/Merch/Merch";
 import Footer from "./components/Footer/Footer";
 
 
+type Product = {
+  id: number;
+  name: string;
+  description: string;
+  price_cents: number;
+  image_url: string;
+  variants: ProductVariant[];
+}
+
+type ProductVariant = {
+  id: number;
+  inventory_count: number;
+  size: string;
+  sku: string;
+}
+
 function App() {
-  const [products, setProducts] = useState<any[]>([]);
-  
+  const [products, setProducts] = useState<Product[]>([]);
+  console.log(products)
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-          const res = await axios.get(`${baseUrl}/products`);
+          const res = await axios.get<Product[]>(`${baseUrl}/products`);
           setProducts(res.data);
       } catch (error) {
-          console.error(`Failed to fetch products`);
+          console.error(`Failed to fetch products`, error);
       }
     }
     fetchProducts();
@@ -33,7 +49,7 @@ function App() {
       <Hero />
       <About />
       <Tour />
-      <Merch products={products} setProducts={setProducts} />
+      <Merch products={products} />
       <Footer />
     </div>
   )

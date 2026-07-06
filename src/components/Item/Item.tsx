@@ -1,20 +1,34 @@
 import "./Item.scss";
 import Button from "../Button/Button"
 import Placeholder from "../../assets/placeholder.png";
-import { useState } from "react";
 
-type ItemProps = {
-    products?: any[];
-    setProducts?: (products: any[]) => void;
+type Product = {
+  id: number;
+  name: string;
+  description: string;
+  price_cents: number;
+  image_url: string;
+  variants: ProductVariant[];
 }
 
-const Item = ({products, setProducts}: ItemProps) => {
+type ProductVariant = {
+  id: number;
+  inventory_count: number;
+  size: string;
+  sku: string;
+}
+
+type ItemProps = {
+    product: Product;
+}
+
+const Item = ({product}: ItemProps) => {
     const n = 30;
     const quantityLimit = [...Array(n + 1).keys()];
     return (
         <section className = "item">
             <img className = "item__picture" src={Placeholder} alt="Placeholder item photo" />
-            <h3 className = "item__description">Shirt</h3>
+            <h3 className = "item__description">{product.name}</h3>
             <div className = "item__size-section">
                 <label className = "item__label" htmlFor="item__size">Size</label>
                 <select id="size" name="size">
@@ -39,7 +53,6 @@ const Item = ({products, setProducts}: ItemProps) => {
             <Button text="Add to Cart" classname="item__button" />
         </section>
     );
-
 };
 
 export default Item;
