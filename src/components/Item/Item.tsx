@@ -1,22 +1,7 @@
 import "./Item.scss";
 import Button from "../Button/Button"
 import Placeholder from "../../assets/placeholder.png";
-
-type Product = {
-  id: number;
-  name: string;
-  description: string;
-  price_cents: number;
-  image_url: string;
-  variants: ProductVariant[];
-}
-
-type ProductVariant = {
-  id: number;
-  inventory_count: number;
-  size: string;
-  sku: string;
-}
+import Product from "../../types/product";
 
 type ItemProps = {
     product: Product;
@@ -25,18 +10,20 @@ type ItemProps = {
 const Item = ({product}: ItemProps) => {
     const n = 30;
     const quantityLimit = [...Array(n + 1).keys()];
+    const sizeArray = product.variants.map((variant) => variant.size);
     return (
         <section className = "item">
             <img className = "item__picture" src={Placeholder} alt="Placeholder item photo" />
             <h3 className = "item__description">{product.name}</h3>
             <div className = "item__size-section">
-                <label className = "item__label" htmlFor="item__size">Size</label>
-                <select id="size" name="size">
-                    <option value="small">S</option>
-                    <option value="medium">M</option>
-                    <option value="large">L</option>
-                    <option value="xl">XL</option>
-                </select>
+                { sizeArray.length > 1 ?
+                <>
+                    <label className = "item__label" htmlFor="item__size">Size</label>
+                    <select id="size" name="size">
+                        {sizeArray.map((size) => <option value={size}>{size}</option>)}
+                    </select>
+                </>
+                : null}
             </div>
             <div className = "item__quantity-section">
                 <label className = "item__label">Quantity</label>

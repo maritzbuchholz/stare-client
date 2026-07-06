@@ -1,28 +1,12 @@
 import "./Merch.scss";
 import Item from "../Item/Item";
-
-type Product = {
-  id: number;
-  name: string;
-  description: string;
-  price_cents: number;
-  image_url: string;
-  variants: ProductVariant[];
-}
-
-type ProductVariant = {
-  id: number;
-  inventory_count: number;
-  size: string;
-  sku: string;
-}
+import Product from "../../types/product";
 
 type MerchProps ={
     products: Product[];
 }
 
 const Merch = ({products}: MerchProps) => {
-    console.log(products);
     return (
         <div className="merch">
             <h1 className="merch__title">Merch</h1>
