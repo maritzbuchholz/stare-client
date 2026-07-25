@@ -8,6 +8,9 @@ import "./NavBar.scss";
 
 const NavBar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const onClick = () => {
+        console.log("Hello World");
+    }
 
     return (
         <header className = "nav">
@@ -28,7 +31,9 @@ const NavBar = () => {
                 </nav>
 
                 <div className = "nav__cart">
-                    <img src={Cart} alt="Shopping Cart" />
+                    <button onClick={onClick} className = "nav__cart-button">
+                        <img src={Cart} alt="Shopping Cart" className = "nav__cart-image" />
+                    </button>
                 </div>
             </div>
 
