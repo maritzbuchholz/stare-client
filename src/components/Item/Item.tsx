@@ -2,6 +2,8 @@ import "./Item.scss";
 import Button from "../Button/Button"
 import Placeholder from "../../assets/placeholder.png";
 import Product from "../../types/productType";
+import { useContext } from 'react';
+import CartContext from "../../context/CartContext";
 
 type ItemProps = {
     product: Product;
@@ -12,7 +14,11 @@ const Item = ({product}: ItemProps) => {
     const n = 20;
     const quantityLimit = [...Array(n + 1).keys()];
     const sizeArray = product.variants.map((variant) => variant.size);
-    
+    const {cart, setCart} = useContext(CartContext);
+    const addToCart = () => {
+        console.log("Hello World");
+    }
+
     return (
         <section className = "item">
             <img className = "item__picture" src={product.image_url} alt="Placeholder item photo" />
@@ -40,7 +46,7 @@ const Item = ({product}: ItemProps) => {
                         ))}
                     </select>
             </div>
-            <Button text="Add to Cart" className="item__button" />
+            <Button onClick={addToCart} text="Add to Cart" className="item__button" />
         </section>
     );
 };
