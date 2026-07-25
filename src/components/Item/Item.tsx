@@ -4,6 +4,7 @@ import Placeholder from "../../assets/placeholder.png";
 import Product from "../../types/productType";
 import { useContext } from 'react';
 import CartContext from "../../context/CartContext";
+import type { SubmitEvent } from "react";
 
 type ItemProps = {
     product: Product;
@@ -15,12 +16,13 @@ const Item = ({product}: ItemProps) => {
     const quantityLimit = [...Array(n + 1).keys()];
     const sizeArray = product.variants.map((variant) => variant.size);
     const {cart, setCart} = useContext(CartContext);
-    const addToCart = () => {
+    const addToCart = (event: SubmitEvent<HTMLFormElement>) => {
+        event.preventDefault();
         console.log("Hello World");
     }
 
     return (
-        <section className = "item">
+        <form onSubmit={addToCart} className = "item">
             <img className = "item__picture" src={product.image_url} alt="Placeholder item photo" />
             <div className = "item__description">
                 <h3 className = "item__value">{product.name}</h3>
@@ -46,8 +48,8 @@ const Item = ({product}: ItemProps) => {
                         ))}
                     </select>
             </div>
-            <Button onClick={addToCart} text="Add to Cart" className="item__button" />
-        </section>
+            <Button type="submit" text="Add to Cart" className="item__button" />
+        </form>
     );
 };
 
