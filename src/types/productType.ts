@@ -15,3 +15,4 @@ type ProductVariant = {
 }
 
 export default Product;
+export type { ProductVariant };

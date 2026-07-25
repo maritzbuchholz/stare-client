@@ -10,12 +10,13 @@ import Tour from "./components/Tour/Tour";
 import Merch from "./components/Merch/Merch";
 import Footer from "./components/Footer/Footer";
 import Product from "./types/productType";
+import type { CartItem } from "./types/cartType";
 import CartContext from "./context/CartContext";
 
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
-  const [cart, setCart] = useState<Product[]>([]);
+  const [cart, setCart] = useState<CartItem[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -28,6 +29,10 @@ function App() {
     }
     fetchProducts();
   }, []);
+
+  useEffect(() => {
+    console.log('cart changed:', cart);
+  }, [cart]);
 
   return (
     <div className = "app-layout">

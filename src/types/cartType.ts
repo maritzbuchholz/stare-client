@@ -1,8 +1,16 @@
 import Product from "./productType";
+import type { ProductVariant } from "./productType";
+
+type CartItem = {
+  product: Product;
+  variant: ProductVariant;
+  quantity: number;
+};
 
 type CartContextType = {
-  cart: Product[];
-  setCart: React.Dispatch<React.SetStateAction<Product[]>>;
+  cart: CartItem[];
+  setCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
 };
 
 export default CartContextType;
+export type { CartItem };
