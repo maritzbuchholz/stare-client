@@ -1,8 +1,9 @@
 import "./Button.scss";
+import { ButtonHTMLAttributes } from "react";
 
 type ButtonProps = {
     text: string;
-    type: string;
+    type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
     className?: string;
     onClick?: () => void;
 }
@@ -14,7 +15,7 @@ const Button = ({
     onClick}: ButtonProps) => {
     return (
         <>
-            <button className={`button ${className}`} onClick={onClick}>
+            <button type={type} className={`button ${className}`} onClick={onClick}>
                 {text}
             </button>
         </>
