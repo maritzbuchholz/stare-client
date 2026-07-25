@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 import StareLogoTrasparent from "../../assets/logo/stareLogoTransparent.png";
 import Cart from "../../assets/icons/cart.svg";
 import Burger from "../../assets/icons/burger.svg";
 import Close from "../../assets/icons/close.svg";
 import "./NavBar.scss";
 
+type NavBarProps ={
+    cartOpen: boolean;
+    setCartOpen: Dispatch<SetStateAction<boolean>>;
+}
 
-const NavBar = () => {
+const NavBar = ({cartOpen, setCartOpen}: NavBarProps) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const onClick = () => {
         console.log("Hello World");

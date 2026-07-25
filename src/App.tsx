@@ -12,11 +12,13 @@ import Footer from "./components/Footer/Footer";
 import Product from "./types/productType";
 import type { CartItem } from "./types/cartType";
 import CartContext from "./context/CartContext";
+import Cart from "./components/Cart/Cart";
 
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [cartOpen, setCartOpen] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -38,7 +40,8 @@ function App() {
     <div className = "app-layout">
       <CartContext.Provider value={{ cart, setCart }}>
         <Background />
-        <NavBar />
+        <NavBar cartOpen={cartOpen} setCartOpen={setCartOpen} />
+        <Cart />
         <Hero />
         <About />
         <Tour />
