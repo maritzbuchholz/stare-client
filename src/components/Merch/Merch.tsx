@@ -1,6 +1,6 @@
 import "./Merch.scss";
 import Item from "../Item/Item";
-import Product from "../../types/product";
+import Product from "../../types/productType";
 
 type MerchProps ={
     products: Product[];

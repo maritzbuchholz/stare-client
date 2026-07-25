@@ -1,7 +1,7 @@
 import "./Item.scss";
 import Button from "../Button/Button"
 import Placeholder from "../../assets/placeholder.png";
-import Product from "../../types/product";
+import Product from "../../types/productType";
 
 type ItemProps = {
     product: Product;

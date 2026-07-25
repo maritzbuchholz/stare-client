@@ -1,3 +1,4 @@
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 import axios from "axios";
 import { useState, useEffect } from 'react'
 import './App.scss'
@@ -8,9 +9,8 @@ import About from "./components/About/About";
 import Tour from "./components/Tour/Tour";
 import Merch from "./components/Merch/Merch";
 import Footer from "./components/Footer/Footer";
-import Product from "./types/product";
-const baseUrl = import.meta.env.VITE_API_BASE_URL;
-import { Cart } from "./context/Cart";
+import Product from "./types/productType";
+import CartContext from "./context/CartContext";
 
 
 function App() {
@@ -31,13 +31,15 @@ function App() {
 
   return (
     <div className = "app-layout">
-      <Background />
-      <NavBar />
-      <Hero />
-      <About />
-      <Tour />
-      <Merch products={products} />
-      <Footer />
+      <CartContext.Provider value={{ cart, setCart }}>
+        <Background />
+        <NavBar />
+        <Hero />
+        <About />
+        <Tour />
+        <Merch products={products} />
+        <Footer />
+      </CartContext.Provider>
     </div>
   )
 }
