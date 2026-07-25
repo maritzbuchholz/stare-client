@@ -1,33 +1,74 @@
 import "./Item.scss";
 import Button from "../Button/Button"
 import Placeholder from "../../assets/placeholder.png";
-import Product from "../../types/product";
+import Product from "../../types/productType";
+import { useContext } from 'react';
+import CartContext from "../../context/CartContext";
+import type { SubmitEvent } from "react";
 
 type ItemProps = {
     product: Product;
+    className: string;
 }
 
 const Item = ({product}: ItemProps) => {
-    const n = 30;
+    const n = 20;
     const quantityLimit = [...Array(n + 1).keys()];
     const sizeArray = product.variants.map((variant) => variant.size);
+    const {setCart} = useContext(CartContext);
+    
+    const addToCart = (event: SubmitEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+        const size = (formData.get("size") as string | null) ?? sizeArray[0];
+        const quantity = Number(formData.get("quantity"));
+        const variant = product.variants.find((variant) => variant.size === size);
+
+        // Guard clause of either no variant or quantity:
+        if (!variant || quantity <= 0) return;
+
+        setCart((prevCart) => {
+            // Checks if a variant is already in a cart. If so, set existingIndex to index. Else, set existingIndex to -1 by default.
+            const existingIndex = prevCart.findIndex(
+                (item) => item.variant.id === variant.id
+            );
+
+            
+            if (existingIndex !== -1) {
+                //Update if it variant already exists
+                const updated = [...prevCart];
+                updated[existingIndex] = {
+                    ...updated[existingIndex],
+                    quantity: updated[existingIndex].quantity + quantity,
+                };
+                return updated;
+            } else {
+                //Add new if it variant doesn't already exist
+                return [...prevCart, { product, variant, quantity }];
+            }
+        });
+    }
+
     return (
-        <section className = "item">
-            <img className = "item__picture" src={Placeholder} alt="Placeholder item photo" />
-            <h3 className = "item__description">{product.name}</h3>
+        <form onSubmit={addToCart} className = "item">
+            <img className = "item__picture" src={product.image_url} alt="Placeholder item photo" />
+            <div className = "item__description">
+                <h3 className = "item__value">{product.name}</h3>
+                <h3 className = "item__value">${(product.price_cents / 100).toFixed(2)}</h3>
+            </div>
             <div className = "item__size-section">
                 { sizeArray.length > 1 ?
-                <>
-                    <label className = "item__label" htmlFor="item__size">Size</label>
-                    <select id="size" name="size">
-                        {sizeArray.map((size) => <option value={size}>{size}</option>)}
-                    </select>
-                </>
+                    <>
+                        <label className = "item__label" htmlFor="item__size">Size</label>
+                        <select id="size" name="size">
+                            {sizeArray.map((size) => <option key={size} value={size}>{size}</option>)}
+                        </select>
+                    </>
                 : null}
             </div>
             <div className = "item__quantity-section">
                 <label className = "item__label">Quantity</label>
-                <div className="item__quantity-controls">
                     <select id="quantity" name="quantity">
                         {quantityLimit.map((i) => (
                             <option key={i} value={i}>
@@ -35,10 +76,9 @@ const Item = ({product}: ItemProps) => {
                             </option>
                         ))}
                     </select>
-                </div>
             </div>
-            <Button text="Add to Cart" classname="item__button" />
-        </section>
+            <Button type="submit" text="Add to Cart" className="item__button" />
+        </form>
     );
 };
 
