@@ -8,14 +8,17 @@ type ItemProps = {
 }
 
 const Item = ({product}: ItemProps) => {
-    const n = 30;
+    const n = 20;
     const quantityLimit = [...Array(n + 1).keys()];
     const sizeArray = product.variants.map((variant) => variant.size);
     
     return (
         <section className = "item">
             <img className = "item__picture" src={product.image_url} alt="Placeholder item photo" />
-            <h3 className = "item__description">{product.name}</h3>
+            <div className = "item__description">
+                <h3 className = "item__value">{product.name}</h3>
+                <h3 className = "item__value">${(product.price_cents / 100).toFixed(2)}</h3>
+            </div>
             <div className = "item__size-section">
                 { sizeArray.length > 1 ?
                     <>
@@ -36,7 +39,7 @@ const Item = ({product}: ItemProps) => {
                         ))}
                     </select>
             </div>
-            <Button text="Add to Cart" classname="item__button" />
+            <Button text="Add to Cart" className="item__button" />
         </section>
     );
 };

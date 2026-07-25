@@ -16,8 +16,14 @@
     &__button{
         padding: 0.5rem 2rem;
     }
-    &__description{
+    &__value{
         color: $color-primary-white;
+        margin: 1rem 0;
+    }
+    &__description{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 4rem;
     }
     &__quantity-section{
         display: flex;
