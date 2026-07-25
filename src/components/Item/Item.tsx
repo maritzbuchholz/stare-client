@@ -5,6 +5,7 @@ import Product from "../../types/product";
 
 type ItemProps = {
     product: Product;
+    className: string;
 }
 
 const Item = ({product}: ItemProps) => {

@@ -11,6 +11,17 @@
     @include desktop{
         max-width: 1200px;
     }
+    &__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        @include desktop{
+            max-width: 1200px;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
     &__title{
         color: $color-primary-gold   
     }
