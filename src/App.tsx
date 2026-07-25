@@ -10,11 +10,13 @@ import Merch from "./components/Merch/Merch";
 import Footer from "./components/Footer/Footer";
 import Product from "./types/product";
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
+import { Cart } from "./context/Cart";
 
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
-  
+  const [cart, setCart] = useState<Product[]>([]);
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
