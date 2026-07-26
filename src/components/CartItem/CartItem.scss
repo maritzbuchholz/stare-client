@@ -1,6 +1,9 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
+h2, h3{
+    color: $color-primary-white;
+}
 .cart-item{
     display: flex;
     background: #5C667E;
@@ -14,6 +17,11 @@
     &__lower{
         display: flex;
         justify-content: space-between;
-        width: 8rem;
+        width: 15rem;
+    }
+    &__right{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
     }
 }

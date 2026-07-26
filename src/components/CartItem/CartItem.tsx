@@ -14,12 +14,12 @@ const CartItem = () => {
                     <h3 className = "cart-item__price">$15</h3>
                 </div>
                 <div className = "cart-item__lower">
-                    <div>    
-                        <button>-</button>
-                        <span>6</span>
-                        <button>+</button>
+                    <div className = "cart-item__user">    
+                        <Button className = "cart-item__button" text="-"></Button>
+                        <span className = "cart-item__quantity">6</span>
+                        <Button className = "cart-item__button" text="+"></Button>
                     </div>
-                    <button>Delete</button>
+                    <Button className = "cart-item__delete" text="Delete"></Button>
                 </div>
             </section>
             <section className = "cart-item__right">
