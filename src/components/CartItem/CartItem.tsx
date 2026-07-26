@@ -1,8 +1,7 @@
 import "./CartItem.scss";
 import Button from "../Button/Button"
 import Placeholder from "../../assets/placeholder.png";
-
-
+import { CartItemType } from "../../types/cartType";
 
 const CartItem = () => {
     return (
