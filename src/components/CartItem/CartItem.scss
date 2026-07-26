@@ -4,7 +4,16 @@
 .cart-item{
     display: flex;
     background: #5C667E;
-    &__title{
-        color: white;
+    &__left{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
+        margin: 1rem;
+    }
+    &__lower{
+        display: flex;
+        justify-content: space-between;
+        width: 8rem;
     }
 }
