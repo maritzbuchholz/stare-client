@@ -5,12 +5,7 @@ import Burger from "../../assets/icons/burger.svg";
 import Close from "../../assets/icons/close.svg";
 import "./NavBar.scss";
 
-type NavBarProps ={
-    cartOpen: boolean;
-    setCartOpen: Dispatch<SetStateAction<boolean>>;
-}
-
-const NavBar = ({cartOpen, setCartOpen}: NavBarProps) => {
+const NavBar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const onClick = () => {
         console.log("Hello World");

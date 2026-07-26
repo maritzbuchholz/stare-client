@@ -18,7 +18,6 @@ import Cart from "./components/Cart/Cart";
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
   const [cart, setCart] = useState<CartItemType[]>([]);
-  const [cartOpen, setCartOpen] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -40,7 +39,7 @@ function App() {
     <div className = "app-layout">
       <CartContext.Provider value={{ cart, setCart }}>
         <Background />
-        <NavBar cartOpen={cartOpen} setCartOpen={setCartOpen} />
+        <NavBar />
         <Cart />
         <Hero />
         <About />
