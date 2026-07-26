@@ -19,7 +19,7 @@ const CartItem = () => {
                         <span className = "cart-item__quantity">6</span>
                         <Button className = "cart-item__button" text="+"></Button>
                     </div>
-                    <Button className = "cart-item__delete" text="Delete"></Button>
+                    <Button className = "cart-item__button" text="Delete"></Button>
                 </div>
             </section>
             <section className = "cart-item__right">
