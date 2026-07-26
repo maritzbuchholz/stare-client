@@ -17,6 +17,7 @@ const Cart = () => {
                 price_cents={item.product.price_cents}
                 quantity={item.quantity}
                 image_url={item.product.image_url}
+                size={item.variant.size}
                 />))}
         </section>
     );
