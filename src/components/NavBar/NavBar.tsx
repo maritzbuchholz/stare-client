@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 import StareLogoTrasparent from "../../assets/logo/stareLogoTransparent.png";
 import Cart from "../../assets/icons/cart.svg";
 import Burger from "../../assets/icons/burger.svg";
 import Close from "../../assets/icons/close.svg";
 import "./NavBar.scss";
 
-
 const NavBar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const onClick = () => {
+        console.log("Hello World");
+    }
 
     return (
         <header className = "nav">
@@ -28,7 +30,9 @@ const NavBar = () => {
                 </nav>
 
                 <div className = "nav__cart">
-                    <img src={Cart} alt="Shopping Cart" />
+                    <button onClick={onClick} className = "nav__cart-button">
+                        <img src={Cart} alt="Shopping Cart" className = "nav__cart-image" />
+                    </button>
                 </div>
             </div>
 

@@ -1,0 +1,34 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+h2, h3{
+    color: $color-primary-white;
+}
+.cart-item{
+    display: flex;
+    background: #5C667E;
+    &__left{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
+        margin: 1rem;
+    }
+    &__lower{
+        display: flex;
+        justify-content: space-between;
+        max-width: 20rem;
+    }
+    &__right{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+    &__quantity{
+        padding: 0 1rem;
+    }
+    &__button{
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}

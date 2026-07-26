@@ -10,13 +10,14 @@ import Tour from "./components/Tour/Tour";
 import Merch from "./components/Merch/Merch";
 import Footer from "./components/Footer/Footer";
 import Product from "./types/productType";
-import type { CartItem } from "./types/cartType";
+import type { CartItemType } from "./types/cartType";
 import CartContext from "./context/CartContext";
+import Cart from "./components/Cart/Cart";
 
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = useState<CartItemType[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -39,6 +40,7 @@ function App() {
       <CartContext.Provider value={{ cart, setCart }}>
         <Background />
         <NavBar />
+        <Cart />
         <Hero />
         <About />
         <Tour />
