@@ -1,6 +1,6 @@
 import "./Item.scss";
 import Button from "../Button/Button"
-import Placeholder from "../../assets/placeholder.png";
+// import Placeholder from "../../assets/placeholder.png";
 import Product from "../../types/productType";
 import { useContext } from 'react';
 import CartContext from "../../context/CartContext";
