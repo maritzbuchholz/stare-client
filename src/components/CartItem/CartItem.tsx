@@ -38,6 +38,49 @@ const CartItem = ({
         });
     }
 
+    const onDecrement = () => {
+        setCart((prevCart) => {
+            const existingIndex = prevCart.findIndex(
+                (item) => item.variant.sku === sku
+            );
+            if (existingIndex === -1) return prevCart;
+
+            const currentItem = prevCart[existingIndex];
+            if (currentItem.quantity <= 1) return prevCart;
+
+            const updatedItem = { ...currentItem, quantity: currentItem.quantity - 1 };
+
+            return [
+                ...prevCart.slice(0, existingIndex),
+                updatedItem,
+                ...prevCart.slice(existingIndex + 1)
+            ];
+        });
+    }
+
+    const onIncrement = () => {
+        setCart((prevCart) => {
+            const existingIndex = prevCart.findIndex(
+                (item) => item.variant.sku === sku
+            );
+            if (existingIndex === -1) return prevCart;
+
+            const currentItem = prevCart[existingIndex];
+            const maxQuantity = Math.min(10, currentItem.variant.inventory_count);
+            if (currentItem.quantity >= maxQuantity) return prevCart;
+
+            const updatedItem = { ...currentItem, quantity: currentItem.quantity + 1 };
+
+            return [
+                ...prevCart.slice(0, existingIndex),
+                updatedItem,
+                ...prevCart.slice(existingIndex + 1)
+            ];
+        });
+    }
+
+
+
     return (
         <section className = "cart-item">
             <img className = "cart-item__thumbnail" src={image_url}/>
@@ -53,9 +96,9 @@ const CartItem = ({
                 </div>
                 <div className = "cart-item__lower">
                     <div className = "cart-item__user">    
-                        <Button className = "cart-item__button" text="-"></Button>
+                        <Button onClick={onDecrement} className = "cart-item__button" text="-"></Button>
                         <span className = "cart-item__quantity">{quantity}</span>
-                        <Button className = "cart-item__button" text="+"></Button>
+                        <Button onClick={onIncrement} className = "cart-item__button" text="+"></Button>
                     </div>
                     <Button onClick={onDelete} className = "cart-item__button" text="Delete"></Button>
                 </div>
