@@ -1,10 +1,11 @@
 import "./Item.scss";
 import Button from "../Button/Button"
-// import Placeholder from "../../assets/placeholder.png";
 import Product from "../../types/productType";
 import { useContext } from 'react';
 import CartContext from "../../context/CartContext";
 import type { SubmitEvent } from "react";
+// import Placeholder from "../../assets/placeholder.png";
+
 
 type ItemProps = {
     product: Product;
@@ -12,7 +13,7 @@ type ItemProps = {
 }
 
 const Item = ({product}: ItemProps) => {
-    const n = 20;
+    const n = 10;
     const quantityLimit = [...Array(n + 1).keys()];
     const sizeArray = product.variants.map((variant) => variant.size);
     const {setCart} = useContext(CartContext);
@@ -31,7 +32,7 @@ const Item = ({product}: ItemProps) => {
         setCart((prevCart) => {
             // Checks if a variant is already in a cart. If so, set existingIndex to index. Else, set existingIndex to -1 by default.
             const existingIndex = prevCart.findIndex(
-                (item) => item.variant.id === variant.id
+                (item) => item.variant.sku === variant.sku
             );
 
             

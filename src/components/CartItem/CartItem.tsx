@@ -2,9 +2,11 @@ import "./CartItem.scss";
 import Button from "../Button/Button"
 // import Placeholder from "../../assets/placeholder.png";
 import { CartItemType } from "../../types/cartType";
+import { useContext } from 'react';
+import CartContext from "../../context/CartContext";
 
 type CartItemProps = {
-    key: string;
+    sku: string;
     name: string;
     price_cents: number;
     quantity: number;
@@ -13,13 +15,29 @@ type CartItemProps = {
 }
 
 const CartItem = ({
-        key,
-        name,
-        price_cents,
-        quantity,
-        image_url,
-        size
-    }: CartItemProps) => {
+    sku,
+    name,
+    price_cents,
+    quantity,
+    image_url,
+    size
+}: CartItemProps) => {
+    const {setCart} = useContext(CartContext);
+
+    const onDelete = () => {
+        setCart((prevCart) => {
+            const existingIndex = prevCart.findIndex(
+                (item) => item.variant.sku === sku
+            );
+            if (existingIndex === -1) return prevCart;
+
+            return [
+                ...prevCart.slice(0, existingIndex),
+                ...prevCart.slice(existingIndex + 1)
+            ];
+        });
+    }
+
     return (
         <section className = "cart-item">
             <img className = "cart-item__thumbnail" src={image_url}/>
@@ -39,7 +57,7 @@ const CartItem = ({
                         <span className = "cart-item__quantity">{quantity}</span>
                         <Button className = "cart-item__button" text="+"></Button>
                     </div>
-                    <Button className = "cart-item__button" text="Delete"></Button>
+                    <Button onClick={onDelete} className = "cart-item__button" text="Delete"></Button>
                 </div>
             </section>
             <section className = "cart-item__right">
