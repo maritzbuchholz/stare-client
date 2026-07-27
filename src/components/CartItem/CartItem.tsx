@@ -25,17 +25,9 @@ const CartItem = ({
     const {setCart} = useContext(CartContext);
 
     const onDelete = () => {
-        setCart((prevCart) => {
-            const existingIndex = prevCart.findIndex(
-                (item) => item.variant.sku === sku
-            );
-            if (existingIndex === -1) return prevCart;
-
-            return [
-                ...prevCart.slice(0, existingIndex),
-                ...prevCart.slice(existingIndex + 1)
-            ];
-        });
+        setCart((prevCart) =>
+            prevCart.filter((item) => item.variant.sku !== sku)
+        );
     }
 
     const onDecrement = () => {
