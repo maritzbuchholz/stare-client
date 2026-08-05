@@ -25,58 +25,29 @@ const CartItem = ({
     const {setCart} = useContext(CartContext);
 
     const onDelete = () => {
-        setCart((prevCart) => {
-            const existingIndex = prevCart.findIndex(
-                (item) => item.variant.sku === sku
-            );
-            if (existingIndex === -1) return prevCart;
-
-            return [
-                ...prevCart.slice(0, existingIndex),
-                ...prevCart.slice(existingIndex + 1)
-            ];
-        });
+        setCart((prevCart) =>
+            prevCart.filter((item) => item.variant.sku !== sku)
+        );
     }
 
     const onDecrement = () => {
-        setCart((prevCart) => {
-            const existingIndex = prevCart.findIndex(
-                (item) => item.variant.sku === sku
-            );
-            if (existingIndex === -1) return prevCart;
-
-            const currentItem = prevCart[existingIndex];
-            if (currentItem.quantity <= 1) return prevCart;
-
-            const updatedItem = { ...currentItem, quantity: currentItem.quantity - 1 };
-
-            return [
-                ...prevCart.slice(0, existingIndex),
-                updatedItem,
-                ...prevCart.slice(existingIndex + 1)
-            ];
-        });
+        setCart((prevCart) =>
+            prevCart.map((item) =>
+                item.variant.sku === sku && item.quantity > 1
+                    ? { ...item, quantity: item.quantity - 1 }
+                    : item
+            )
+        );
     }
 
     const onIncrement = () => {
-        setCart((prevCart) => {
-            const existingIndex = prevCart.findIndex(
-                (item) => item.variant.sku === sku
-            );
-            if (existingIndex === -1) return prevCart;
-
-            const currentItem = prevCart[existingIndex];
-            const maxQuantity = Math.min(10, currentItem.variant.inventory_count);
-            if (currentItem.quantity >= maxQuantity) return prevCart;
-
-            const updatedItem = { ...currentItem, quantity: currentItem.quantity + 1 };
-
-            return [
-                ...prevCart.slice(0, existingIndex),
-                updatedItem,
-                ...prevCart.slice(existingIndex + 1)
-            ];
-        });
+        setCart((prevCart) =>
+            prevCart.map((item) =>
+                item.variant.sku === sku && item.quantity < 10
+                    ? { ...item, quantity: item.quantity + 1 }
+                    : item
+            )
+        );
     }
 
 
