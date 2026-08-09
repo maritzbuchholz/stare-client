@@ -5,11 +5,13 @@ import Burger from "../../assets/icons/burger.svg";
 import Close from "../../assets/icons/close.svg";
 import "./NavBar.scss";
 
-const NavBar = () => {
+interface NavBarProps {
+  cartOpen: boolean;
+  setCartOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+const NavBar = ({ cartOpen, setCartOpen }: NavBarProps) => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const onClick = () => {
-        console.log("Hello World");
-    }
 
     return (
         <header className = "nav">
@@ -19,7 +21,7 @@ const NavBar = () => {
                 </div>
                 
                 <button className="nav__burger" onClick={() => setMenuOpen(!menuOpen)}>
-                    <img src={menuOpen ? Close : Burger} alt="Menu Item" />
+                    <img src={menuOpen ? Close : Burger} alt="Menu Item" className="nav__menu-image" />
                 </button>
 
                 <nav className={"nav__tabs-tablet"}>
@@ -30,8 +32,8 @@ const NavBar = () => {
                 </nav>
 
                 <div className = "nav__cart">
-                    <button onClick={onClick} className = "nav__cart-button">
-                        <img src={Cart} alt="Shopping Cart" className = "nav__cart-image" />
+                    <button onClick={() => setCartOpen(!cartOpen)} className = "nav__cart-button">
+                        <img src={cartOpen ? Close : Cart} alt="Shopping Cart" className="nav__cart-image" />
                     </button>
                 </div>
             </div>
