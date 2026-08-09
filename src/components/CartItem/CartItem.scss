@@ -9,16 +9,19 @@ h2, h3{
     background: #5C667E;
     width: 100%;
     margin: 1rem;
+    border: solid 1px $color-primary-gold;
     &__title{
-        font-size: 1rem;
+        font-size: 1.25rem;
         margin: 0;
+        margin-bottom: 0.25rem;
     }
     &__price{
-        font-size: 1rem;
+        font-size: 0.75rem;
         margin: 0;
+        margin-bottom: 0.25rem;
     }
     &__size{
-        font-size: 1rem;
+        font-size: 0.75rem;
         margin: 0;
     }
     &__thumbnail{
@@ -44,6 +47,7 @@ h2, h3{
     }
     &__quantity{
         padding: 0 1rem;
+        color: white;
     }
     &__button{
         padding-top: 0.5rem;

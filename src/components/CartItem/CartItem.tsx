@@ -75,7 +75,7 @@ const CartItem = ({
                 </div>
             </section>
             <section className = "cart-item__right">
-                <h3 className = "cart-item__subtotal">Subtotal: {(price_cents / 100 * quantity).toFixed(2)}</h3>
+                <h3 className = "cart-item__subtotal">Subtotal: ${(price_cents / 100 * quantity).toFixed(2)}</h3>
             </section>
         </section>
     );
