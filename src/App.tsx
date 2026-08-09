@@ -18,6 +18,7 @@ import Cart from "./components/Cart/Cart";
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
   const [cart, setCart] = useState<CartItemType[]>([]);
+  const [cartOpen, setCartOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -31,16 +32,18 @@ function App() {
     fetchProducts();
   }, []);
 
-  useEffect(() => {
-    console.log('cart changed:', cart);
-  }, [cart]);
+  // useEffect(() => {
+  //   if (cart.length === 0) {
+  //     setCartOpen(false);
+  //   }
+  // }, [cart]);
 
   return (
     <div className = "app-layout">
       <CartContext.Provider value={{ cart, setCart }}>
         <Background />
-        <NavBar />
-        <Cart />
+        <NavBar cartOpen={cartOpen} setCartOpen={setCartOpen} />
+        <Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/>
         <Hero />
         <About />
         <Tour />

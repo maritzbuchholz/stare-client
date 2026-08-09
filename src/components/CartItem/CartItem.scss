@@ -7,6 +7,28 @@ h2, h3{
 .cart-item{
     display: flex;
     background: #5C667E;
+    width: 95%;
+    margin: 1rem 1rem 0 1rem;
+    border: solid 1px $color-primary-gold;
+    box-sizing: border-box;
+    &__title{
+        font-size: 1.25rem;
+        margin: 0;
+        margin-bottom: 0.25rem;
+    }
+    &__price{
+        font-size: 0.75rem;
+        margin: 0;
+        margin-bottom: 0.25rem;
+    }
+    &__size{
+        font-size: 0.75rem;
+        margin: 0;
+    }
+    &__thumbnail{
+        height: 10rem;
+        width: 10rem;
+    }
     &__left{
         display: flex;
         flex-direction: column;
@@ -26,9 +48,13 @@ h2, h3{
     }
     &__quantity{
         padding: 0 1rem;
+        color: white;
     }
     &__button{
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
+    }
+    &__subtotal{
+        padding-left: 1rem;
     }
 }

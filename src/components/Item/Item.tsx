@@ -21,7 +21,8 @@ const Item = ({product}: ItemProps) => {
     const addToCart = (event: SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const formData = new FormData(event.currentTarget);
+        const form = event.currentTarget;
+        const formData = new FormData(form);
         const size = (formData.get("size") as string | null) ?? sizeArray[0];
         const quantity = Number(formData.get("quantity"));
         const variant = product.variants.find((variant) => variant.size === size);
@@ -49,6 +50,8 @@ const Item = ({product}: ItemProps) => {
                 return [...prevCart, { product, variant, quantity }];
             }
         });
+
+        form.reset();
     }
 
     return (
