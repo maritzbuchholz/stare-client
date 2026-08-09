@@ -2,7 +2,7 @@ import "./CartItem.scss";
 import Button from "../Button/Button"
 // import Placeholder from "../../assets/placeholder.png";
 import { CartItemType } from "../../types/cartType";
-import { useState, Dispatch, SetStateAction, useContext } from 'react';
+import { Dispatch, SetStateAction, useContext } from 'react';
 import CartContext from "../../context/CartContext";
 
 type CartItemProps = {

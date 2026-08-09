@@ -2,7 +2,7 @@ import "./Cart.scss";
 import CartItem from "../CartItem/CartItem";
 import Button from "../Button/Button"
 import CartContext from "../../context/CartContext";
-import { useState, Dispatch, SetStateAction, useContext } from 'react';
+import { Dispatch, SetStateAction, useContext } from 'react';
 
 type CartProps = {
   cartOpen: boolean;
