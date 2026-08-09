@@ -37,7 +37,7 @@ function App() {
   }, [cart]);
 
   return (
-    <div className = "app-layout">s
+    <div className = "app-layout">
       <CartContext.Provider value={{ cart, setCart }}>
         <Background />
         <NavBar cartOpen={cartOpen} setCartOpen={setCartOpen} />
