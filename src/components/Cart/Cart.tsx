@@ -4,9 +4,11 @@ import Button from "../Button/Button"
 import CartContext from "../../context/CartContext";
 import { useContext } from 'react';
 
+interface CartProps {
+  cartOpen: boolean;
+}
 
-
-const Cart = () => {
+const Cart = ({ cartOpen }: CartProps) => {
     const {cart} = useContext(CartContext);
     return (
         <section className = "cart">
