@@ -9,9 +9,21 @@ h2, h3{
     background: #5C667E;
     width: 100%;
     margin: 1rem;
+    &__title{
+        font-size: 1rem;
+        margin: 0;
+    }
+    &__price{
+        font-size: 1rem;
+        margin: 0;
+    }
+    &__size{
+        font-size: 1rem;
+        margin: 0;
+    }
     &__thumbnail{
-        height: 16rem;
-        width: 16rem;
+        height: 10rem;
+        width: 10rem;
     }
     &__left{
         display: flex;
@@ -36,5 +48,6 @@ h2, h3{
     &__button{
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
+        // padding: 0.5rem;
     }
 }
