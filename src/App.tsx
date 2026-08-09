@@ -33,7 +33,9 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log('cart changed:', cart);
+    if (cart.length === 0) {
+      setCartOpen(false);
+    }
   }, [cart]);
 
   return (
