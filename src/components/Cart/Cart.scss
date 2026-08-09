@@ -2,15 +2,20 @@
 @use "../../styles/mixins" as *;
 
 .cart{
-    display: flex;
-    align-self: end;
-    flex-direction: column;
-    position: fixed;
-    width: 50%;
-    z-index: 1;
-    top: 6rem;
-    border: 1px solid $color-primary-gold;
-    border-right: 0;
-    padding: 2rem;
-    background-color: black;
+    &__closed{
+        display: none;
+    }
+    &__open{
+        display: flex;
+        align-self: end;
+        flex-direction: column;
+        position: fixed;
+        width: 50%;
+        z-index: 1;
+        top: 6rem;
+        border: 1px solid $color-primary-gold;
+        border-right: 0;
+        padding: 2rem;
+        background-color: black;
+    }
 }

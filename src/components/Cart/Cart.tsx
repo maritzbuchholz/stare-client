@@ -11,7 +11,7 @@ interface CartProps {
 const Cart = ({ cartOpen }: CartProps) => {
     const {cart} = useContext(CartContext);
     return (
-        <section className = "cart">
+        <section className = {cartOpen ? "cart__open" : "cart__closed"}>
             {cart.map((item) => (
                 <CartItem
                 key={item.variant.sku}
