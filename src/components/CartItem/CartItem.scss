@@ -7,6 +7,12 @@ h2, h3{
 .cart-item{
     display: flex;
     background: #5C667E;
+    width: 100%;
+    margin: 1rem;
+    &__thumbnail{
+        height: 16rem;
+        width: 16rem;
+    }
     &__left{
         display: flex;
         flex-direction: column;

@@ -2,8 +2,14 @@
 @use "../../styles/mixins" as *;
 
 .cart{
+    display: flex;
+    align-self: end;
+    flex-direction: column;
     position: fixed;
-    width: 100%;
+    width: 50%;
     z-index: 1;
     top: 6rem;
+    border: 1px solid $color-primary-gold;
+    padding: 2rem;
+    background-color: black;
 }
