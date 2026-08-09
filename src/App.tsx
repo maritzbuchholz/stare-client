@@ -32,11 +32,11 @@ function App() {
     fetchProducts();
   }, []);
 
-  useEffect(() => {
-    if (cart.length === 0) {
-      setCartOpen(false);
-    }
-  }, [cart]);
+  // useEffect(() => {
+  //   if (cart.length === 0) {
+  //     setCartOpen(false);
+  //   }
+  // }, [cart]);
 
   return (
     <div className = "app-layout">
