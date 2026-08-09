@@ -2,7 +2,7 @@ import "./CartItem.scss";
 import Button from "../Button/Button"
 // import Placeholder from "../../assets/placeholder.png";
 import { CartItemType } from "../../types/cartType";
-import { useContext } from 'react';
+import { useState, Dispatch, SetStateAction, useContext } from 'react';
 import CartContext from "../../context/CartContext";
 
 type CartItemProps = {
@@ -12,6 +12,7 @@ type CartItemProps = {
     quantity: number;
     image_url: string;
     size: string;
+    setCartOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 const CartItem = ({
@@ -20,14 +21,18 @@ const CartItem = ({
     price_cents,
     quantity,
     image_url,
-    size
+    size,
+    setCartOpen
 }: CartItemProps) => {
-    const {setCart} = useContext(CartContext);
+    const {cart, setCart} = useContext(CartContext);
 
     const onDelete = () => {
         setCart((prevCart) =>
             prevCart.filter((item) => item.variant.sku !== sku)
         );
+        if (cart.length === 0){
+            setCartOpen(false);
+        }
     }
 
     const onDecrement = () => {

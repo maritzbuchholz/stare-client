@@ -23,6 +23,7 @@ const Cart = ({ cartOpen, setCartOpen }: CartProps) => {
                     quantity={item.quantity}
                     image_url={item.product.image_url}
                     size={item.variant.size}
+                    setCartOpen={setCartOpen}
                     />))}
             </div>
             <div className="cart__bottom">
