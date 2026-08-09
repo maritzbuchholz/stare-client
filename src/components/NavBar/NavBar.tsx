@@ -7,7 +7,7 @@ import Close from "../../assets/icons/close.svg";
 import CartContext from "../../context/CartContext";
 import "./NavBar.scss";
 
-interface NavBarProps {
+type NavBarProps = {
   cartOpen: boolean;
   setCartOpen: Dispatch<SetStateAction<boolean>>;
 }

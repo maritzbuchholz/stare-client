@@ -2,13 +2,14 @@ import "./Cart.scss";
 import CartItem from "../CartItem/CartItem";
 import Button from "../Button/Button"
 import CartContext from "../../context/CartContext";
-import { useContext } from 'react';
+import { useState, Dispatch, SetStateAction, useContext } from 'react';
 
-interface CartProps {
+type CartProps = {
   cartOpen: boolean;
+  setCartOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const Cart = ({ cartOpen }: CartProps) => {
+const Cart = ({ cartOpen, setCartOpen }: CartProps) => {
     const {cart} = useContext(CartContext);
     return (
         <section className = { cart.length === 0  ? "cart-closed" : (cartOpen ? "cart-open" : "cart-closed")}>

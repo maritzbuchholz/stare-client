@@ -43,7 +43,7 @@ function App() {
       <CartContext.Provider value={{ cart, setCart }}>
         <Background />
         <NavBar cartOpen={cartOpen} setCartOpen={setCartOpen} />
-        <Cart cartOpen={cartOpen}/>
+        <Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/>
         <Hero />
         <About />
         <Tour />
