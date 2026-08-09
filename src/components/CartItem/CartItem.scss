@@ -7,9 +7,10 @@ h2, h3{
 .cart-item{
     display: flex;
     background: #5C667E;
-    width: 100%;
-    margin: 1rem;
+    width: 95%;
+    margin: 1rem 1rem 0 1rem;
     border: solid 1px $color-primary-gold;
+    box-sizing: border-box;
     &__title{
         font-size: 1.25rem;
         margin: 0;
@@ -52,6 +53,8 @@ h2, h3{
     &__button{
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
-        // padding: 0.5rem;
+    }
+    &__subtotal{
+        padding-left: 1rem;
     }
 }

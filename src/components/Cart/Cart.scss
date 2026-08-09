@@ -2,10 +2,10 @@
 @use "../../styles/mixins" as *;
 
 .cart{
-    &__closed{
+    &-closed{
         display: none;
     }
-    &__open{
+    &-open{
         display: flex;
         align-self: end;
         flex-direction: column;
@@ -19,11 +19,14 @@
         padding: 2rem;
         background-color: black;
     }
-    &-items{
+    &__items{
         overflow-y: auto;
         scrollbar-color: $color-primary-gold black;
     }
-    &-bottom{
+    &__bottom{
         margin-left: 1rem;
+    }
+    &__bottom{
+        margin-top: 1rem;
     }
 }

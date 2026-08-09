@@ -11,8 +11,8 @@ interface CartProps {
 const Cart = ({ cartOpen }: CartProps) => {
     const {cart} = useContext(CartContext);
     return (
-        <section className = { cart.length === 0  ? "cart__closed" : (cartOpen ? "cart__open" : "cart__closed")}>
-            <div className="cart-items">
+        <section className = { cart.length === 0  ? "cart-closed" : (cartOpen ? "cart-open" : "cart-closed")}>
+            <div className="cart__items">
                 {cart.map((item) => (
                     <CartItem
                     key={item.variant.sku}
@@ -24,7 +24,7 @@ const Cart = ({ cartOpen }: CartProps) => {
                     size={item.variant.size}
                     />))}
             </div>
-            <div className="cart-bottom">
+            <div className="cart__bottom">
                 <Button text="Checkout" />
             </div>
         </section>
