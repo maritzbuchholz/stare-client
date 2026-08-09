@@ -1,8 +1,9 @@
-import { useState, Dispatch, SetStateAction } from "react";
+import { useState, Dispatch, SetStateAction, useContext } from "react";
 import StareLogoTrasparent from "../../assets/logo/stareLogoTransparent.png";
 import Cart from "../../assets/icons/cart.svg";
 import Burger from "../../assets/icons/burger.svg";
 import Close from "../../assets/icons/close.svg";
+import CartContext from "../../context/CartContext";
 import "./NavBar.scss";
 
 interface NavBarProps {
@@ -12,7 +13,7 @@ interface NavBarProps {
 
 const NavBar = ({ cartOpen, setCartOpen }: NavBarProps) => {
     const [menuOpen, setMenuOpen] = useState(false);
-
+    const {cart} = useContext(CartContext);
     return (
         <header className = "nav">
             <div className = "nav__top">
@@ -33,7 +34,7 @@ const NavBar = ({ cartOpen, setCartOpen }: NavBarProps) => {
 
                 <div className = "nav__cart">
                     <button onClick={() => setCartOpen(!cartOpen)} className = "nav__cart-button">
-                        <img src={cartOpen ? Close : Cart} alt="Shopping Cart" className="nav__cart-image" />
+                        <img src={cart.length === 0 ? Cart : (cartOpen ? Close : Cart)} alt="Shopping Cart" className="nav__cart-image" />
                     </button>
                 </div>
             </div>
