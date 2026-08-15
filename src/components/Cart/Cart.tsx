@@ -16,7 +16,8 @@ const Cart = ({ cartOpen, setCartOpen }: CartProps) => {
     const onClick = () => {
         const checkout = async () => {
             try {
-                const res = await axios.post(`${baseUrl}/create-checkout-session`);
+                const items = cart.map((item) => ({ quantity: item.quantity, sku: item.variant.sku }));
+                const res = await axios.post(`${baseUrl}/create-checkout-session`, { items });
                 window.location.href = res.data.url;
             } catch (error) {
                 console.error(`Failed to checkout`, error);
