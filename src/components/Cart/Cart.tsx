@@ -1,8 +1,10 @@
 import "./Cart.scss";
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 import CartItem from "../CartItem/CartItem";
 import Button from "../Button/Button"
 import CartContext from "../../context/CartContext";
 import { Dispatch, SetStateAction, useContext } from 'react';
+import axios from "axios";
 
 type CartProps = {
   cartOpen: boolean;
@@ -11,6 +13,17 @@ type CartProps = {
 
 const Cart = ({ cartOpen, setCartOpen }: CartProps) => {
     const {cart} = useContext(CartContext);
+    const onClick = () => {
+        const checkout = async () => {
+            try {
+                const res = await axios.post(`${baseUrl}/create-checkout-session`);
+                window.location.href = res.data.url;
+            } catch (error) {
+                console.error(`Failed to checkout`, error);
+            }
+        };
+        checkout()
+    };
     return (
         <section className = { cart.length === 0  ? "cart-closed" : (cartOpen ? "cart-open" : "cart-closed")}>
             <div className="cart__items">
@@ -26,7 +39,7 @@ const Cart = ({ cartOpen, setCartOpen }: CartProps) => {
                     setCartOpen={setCartOpen}
                     />))}
             </div>
-            <div className="cart__bottom">
+            <div onClick={onClick} className="cart__bottom">
                 <Button text="Checkout" />
             </div>
         </section>
