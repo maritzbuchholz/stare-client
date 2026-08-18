@@ -15,7 +15,7 @@ type ItemProps = {
 const Item = ({product}: ItemProps) => {
     const n = 10;
     const quantityLimit = [...Array(n + 1).keys()];
-    const sizeArray = product.variants.map((variant) => variant.size);
+    const sizeArray = product.variants.map((variant) => variant.size).reverse();
     const {setCart} = useContext(CartContext);
     
     const addToCart = (event: SubmitEvent<HTMLFormElement>) => {
