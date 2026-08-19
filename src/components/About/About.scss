@@ -2,7 +2,7 @@
 @use "../../styles/mixins" as *;
 
 .about{
-    scroll-margin-top: $nav-height;
+    scroll-margin-top: var(--nav-height, #{$nav-height});
     text-align: center;
     margin: 10rem 4rem;
     &__title{
