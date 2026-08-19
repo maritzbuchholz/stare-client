@@ -12,10 +12,11 @@
         position: fixed;
         width: 50%;
         z-index: 1;
-        top: 6rem;
+        top: var(--nav-height, #{$nav-height});
         max-height: 70vh;
         border: 1px solid $color-primary-gold;
         border-right: 0;
+        border-top: 0;
         padding: 2rem;
         background-color: black;
     }

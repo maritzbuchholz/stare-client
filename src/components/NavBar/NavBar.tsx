@@ -29,7 +29,7 @@ const NavBar = ({ cartOpen, setCartOpen }: NavBarProps) => {
         //a CSS variable that sits at the html level and has no effect inherently
         //but eventually will be used by components on the page
         const updateNavHeight = () => {
-            document.documentElement.style.setProperty("--nav-height", `${navEl.offsetHeight}px`);
+            document.documentElement.style.setProperty("--nav-height", `${navEl.getBoundingClientRect().height}px`);
         };
 
         updateNavHeight();
