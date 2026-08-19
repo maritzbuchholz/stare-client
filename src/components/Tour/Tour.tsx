@@ -24,7 +24,7 @@ const Tour = () => {
         },
     ]
     return (
-        <div className="tour">
+        <div className="tour" id="tour">
             <h1 className="tour__title">Tour</h1>
             {tourDates.map((event) => (
                 <Event

@@ -5,7 +5,7 @@ import "./Hero.scss";
 
 const Hero = () => {
     return (
-        <header className = "hero">
+        <header className = "hero" id="hero">
             <div className = "hero__logo-container">
                 <img className = "hero__logo" src={StareLogoTransparent} alt="Stare Logo" />
             </div> 

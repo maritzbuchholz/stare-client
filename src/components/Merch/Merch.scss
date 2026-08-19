@@ -2,6 +2,7 @@
 @use "../../styles/mixins" as *;
 
 .merch {
+    scroll-margin-top: $nav-height;
     display: flex;
     align-self: center;
     flex-direction: column;
