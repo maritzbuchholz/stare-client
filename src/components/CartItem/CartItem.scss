@@ -1,60 +1,135 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
-h2, h3{
-    color: $color-primary-white;
-}
-.cart-item{
+.cart-item {
     display: flex;
-    background: #5C667E;
-    width: 95%;
-    margin: 1rem 1rem 0 1rem;
-    border: solid 1px $color-primary-gold;
-    box-sizing: border-box;
-    &__title{
-        font-size: 1.25rem;
-        margin: 0;
-        margin-bottom: 0.25rem;
+    gap: 1rem;
+    padding: 1rem 0;
+
+    &__thumbnail {
+        width: 5.5rem;
+        height: 5.5rem;
+        object-fit: cover;
+        border: 1px solid $color-primary-gold;
+        border-radius: 8px;
+        flex-shrink: 0;
     }
-    &__price{
-        font-size: 0.75rem;
-        margin: 0;
-        margin-bottom: 0.25rem;
-    }
-    &__size{
-        font-size: 0.75rem;
-        margin: 0;
-    }
-    &__thumbnail{
-        height: 10rem;
-        width: 10rem;
-    }
-    &__left{
+
+    &__details {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 50%;
-        margin: 1rem;
+        flex-grow: 1;
+        gap: 0.75rem;
     }
-    &__lower{
+
+    &__header {
         display: flex;
         justify-content: space-between;
-        max-width: 20rem;
+        align-items: flex-start;
+        gap: 1rem;
     }
-    &__right{
+
+    &__info {
         display: flex;
         flex-direction: column;
-        justify-content: end;
+        gap: 0.25rem;
     }
-    &__quantity{
-        padding: 0 1rem;
-        color: white;
+
+    &__title {
+        margin: 0;
+        font-size: 1.125rem;
+        color: $color-primary-white;
     }
-    &__button{
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
+
+    &__price,
+    &__size {
+        margin: 0;
+        font-size: 0.75rem;
+        color: $color-secondary-cloud;
     }
-    &__subtotal{
-        padding-left: 1rem;
+
+    &__delete {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        color: $color-secondary-cloud;
+        cursor: pointer;
+        flex-shrink: 0;
+
+        &:hover {
+            border-color: $color-primary-gold;
+            color: $color-primary-gold;
+        }
+
+        &:active {
+            border-color: $color-primary-white;
+            color: $color-primary-white;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    &__stepper {
+        display: flex;
+        align-items: center;
+        border: 1px solid $color-primary-gold;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    &__step {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        background: transparent;
+        border: none;
+        color: $color-primary-gold;
+        font-family: $font-family-primary;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover:not(:disabled) {
+            background: #222222;
+        }
+
+        &:active:not(:disabled) {
+            color: $color-primary-white;
+        }
+
+        &:disabled {
+            opacity: 0.35;
+            cursor: default;
+        }
+    }
+
+    &__quantity {
+        min-width: 2rem;
+        text-align: center;
+        font-size: 0.875rem;
+        color: $color-primary-white;
+    }
+
+    &__line-total {
+        margin: 0;
+        font-size: 0.875rem;
+        color: $color-secondary-cloud;
+
+        strong {
+            color: $color-primary-white;
+        }
     }
 }

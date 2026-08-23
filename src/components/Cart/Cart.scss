@@ -17,17 +17,41 @@
         border: 1px solid $color-primary-gold;
         border-right: 0;
         border-top: 0;
-        padding: 2rem;
-        background-color: black;
+        border-bottom-left-radius: 8px;
+        padding: 1.5rem;
+        background-color: $color-background-black;
     }
     &__items{
+        display: flex;
+        flex-direction: column;
         overflow-y: auto;
-        scrollbar-color: $color-primary-gold black;
+        scrollbar-color: $color-primary-gold $color-background-black;
+
+        > * + * {
+            border-top: 1px solid rgba($color-primary-gold, 0.25);
+        }
     }
-    &__bottom{
-        margin-left: 1rem;
+    &__summary{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem 0;
+        border-top: 1px solid rgba($color-primary-gold, 0.25);
     }
-    &__bottom{
-        margin-top: 1rem;
+    &__summary-row{
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 0.875rem;
+        color: $color-secondary-cloud;
+
+        &--total{
+            font-size: 1rem;
+            font-weight: bold;
+            color: $color-primary-white;
+        }
+    }
+    &__checkout{
+        width: 100%;
     }
 }
