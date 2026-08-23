@@ -7,12 +7,17 @@
     padding: 1rem 0;
 
     &__thumbnail {
-        width: 5.5rem;
-        height: 5.5rem;
+        width: 4rem;
+        height: 4rem;
         object-fit: cover;
         border: 1px solid $color-primary-gold;
         border-radius: 8px;
         flex-shrink: 0;
+
+        @include tablet {
+            width: 5.5rem;
+            height: 5.5rem;
+        }
     }
 
     &__details {
