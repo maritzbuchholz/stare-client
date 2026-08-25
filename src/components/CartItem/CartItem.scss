@@ -63,19 +63,21 @@
         background: transparent;
         border: 1px solid transparent;
         border-radius: 6px;
-        color: $color-secondary-cloud;
         cursor: pointer;
         flex-shrink: 0;
 
         &:hover {
             border-color: $color-primary-gold;
-            color: $color-primary-gold;
         }
 
         &:active {
-            border-color: $color-primary-white;
-            color: $color-primary-white;
+            background: #222222;
         }
+    }
+
+    &__delete-icon {
+        width: 20px;
+        height: 20px;
     }
 
     &__footer {
