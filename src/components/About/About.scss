@@ -3,9 +3,21 @@
 
 .about{
     scroll-margin-top: var(--nav-height, #{$nav-height});
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    width: 100%;
+    border: solid 1px $color-primary-gold;
+    border-radius: 3px;
+    background: $color-background-black;
+    padding-bottom: 2rem;
     text-align: center;
     margin: 10rem 4rem;
+    @include desktop{
+        max-width: 1200px;
+    }
     &__title{
+        padding-top: 1rem;
         color: $color-primary-gold   
     }
     &__description{
