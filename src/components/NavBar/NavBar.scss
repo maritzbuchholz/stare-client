@@ -2,7 +2,7 @@
 @use "../../styles/mixins" as *;
 
 .nav {
-    background-color: black;
+    background-color: $color-background-black;
     border-bottom: 1px solid $color-primary-gold;
 
     position: fixed;
