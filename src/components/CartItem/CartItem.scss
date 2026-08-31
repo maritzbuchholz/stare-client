@@ -11,7 +11,7 @@
         height: 4rem;
         object-fit: cover;
         border: 1px solid $color-primary-gold;
-        border-radius: 8px;
+        border-radius: $standard-radius;
         flex-shrink: 0;
 
         @include tablet {
@@ -62,7 +62,7 @@
         height: 2.25rem;
         background: transparent;
         border: 1px solid transparent;
-        border-radius: 6px;
+        border-radius: $standard-radius;
         cursor: pointer;
         flex-shrink: 0;
 
@@ -92,7 +92,7 @@
         display: flex;
         align-items: center;
         border: 1px solid $color-primary-gold;
-        border-radius: 6px;
+        border-radius: $standard-radius;
         overflow: hidden;
     }
 

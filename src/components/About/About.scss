@@ -8,7 +8,7 @@
     flex-direction: column;
     width: 100%;
     border: solid 1px $color-primary-gold;
-    border-radius: 3px;
+    border-radius: $standard-radius;
     background: $color-background-black;
     padding-bottom: 2rem;
     text-align: center;
