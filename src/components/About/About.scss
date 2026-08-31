@@ -18,7 +18,8 @@
     }
     &__title{
         padding-top: 1rem;
-        color: $color-primary-gold   
+        color: $color-primary-gold;
+        font-family: $font-family-title;
     }
     &__description{
         color: $color-primary-white
