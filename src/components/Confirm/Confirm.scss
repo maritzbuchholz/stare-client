@@ -4,13 +4,14 @@
 .confirm{
     display: flex;
     align-self: center;
+    justify-content: center;
     flex-direction: column;
+    flex: 1;
     border-radius: $standard-radius;
     background: $color-background-black;
     padding-bottom: 2rem;
     text-align: center;
-    margin-top: calc(2 * var(--nav-height, #{$nav-height}));
-    min-height: calc(100vh - 2 * var(--nav-height, #{$nav-height}));
+    margin-top: var(--nav-height, #{$nav-height});
     @include desktop{
         max-width: 1200px;
     }
