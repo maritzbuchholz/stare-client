@@ -7,6 +7,7 @@
     align-self: center;
     flex-direction: column;
     width: 100%;
+    box-sizing: border-box;
     border: solid 1px $color-primary-gold;
     border-radius: $standard-radius;
     background: $color-background-black;
