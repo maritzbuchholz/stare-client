@@ -6,19 +6,19 @@ const Tour = () => {
     const tourDates = [
         {
             key: 1,
-            date: "December 6, 2026",
+            date: "Dec 6, 2026",
             venue: "Brooklyn Monarch",
             location: "Brooklyn, NY"
         },
         {
             key: 2,
-            date: "December 10, 2026",
+            date: "Dec 10, 2026",
             venue: "TV Eye",
             location: "Ridgewood, NY"
         },
         {
             key: 3,
-            date: "December 12, 2026",
+            date: "Dec 12, 2026",
             venue: "Gold Sounds",
             location: "Brooklyn, NY"
         },

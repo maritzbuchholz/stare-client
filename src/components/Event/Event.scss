@@ -17,7 +17,21 @@
         padding: 1rem;
     }
     &__top{
-        text-align: start;       
+        text-align: start;
+    }
+    &__date{
+        font-size: 1.5rem;
+        margin: 0;
+    }
+    &__venue{
+        font-size: 1.25rem;
+        color: $color-secondary-cloud;
+        margin: 0;
+    }
+    &__location{
+        font-size: 1.25rem;
+        color: $color-secondary-cloud;
+        margin: 0;
     }
     &__bottom{
         display: flex;
@@ -37,6 +51,7 @@
             flex-direction: row;
             justify-content: space-between;
             margin-bottom: 0;
+            align-items: center;
         }
     }
 }
