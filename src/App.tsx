@@ -14,8 +14,21 @@ import Product from "./types/productType";
 import type { CartItemType } from "./types/cartType";
 import CartContext from "./context/CartContext";
 import Cart from "./components/Cart/Cart";
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 
+function ScrollToHash() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const id = hash.slice(1);
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    });
+  }, [hash]);
+
+  return null;
+}
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -44,7 +57,7 @@ function App() {
     <div className = "app-layout">
       <CartContext.Provider value={{ cart, setCart }}>
         <BrowserRouter>
-            
+            <ScrollToHash />
             <NavBar cartOpen={cartOpen} setCartOpen={setCartOpen} />
             <Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/>
             <Routes>
