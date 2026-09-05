@@ -54,4 +54,8 @@
             align-items: center;
         }
     }
+    &__button.button{
+        padding: 0.5rem 2rem;
+        line-height: 140%;
+    }
 }

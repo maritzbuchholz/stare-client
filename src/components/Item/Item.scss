@@ -13,9 +13,9 @@
         height: 100px;
     }
     &__label{
-        color: $color-primary-white;
+        color: $color-secondary-cloud;
     }
-    &__button{
+    &__button.button{
         padding: 0.5rem 2rem;
         line-height: 140%;
     }
@@ -51,7 +51,7 @@
 }
 #size, #quantity{
     background-color: black;
-    color: $color-primary-white;
+    color: $color-secondary-cloud;
     border: solid 1px $color-primary-gold;
     border-radius: $standard-radius;
     font-family: $font-family-primary;
