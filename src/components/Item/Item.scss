@@ -17,27 +17,36 @@
     }
     &__button{
         padding: 0.5rem 2rem;
+        line-height: 140%;
     }
-    &__value{
+    &__name{
         color: $color-primary-white;
-        margin: 1rem 0;
+        margin: 0;
+        font-size: 1.5rem;
+    }
+    &__price{
+        color: $color-secondary-cloud;
+        margin-top: 0.25rem;
+        font-size: 1rem;
     }
     &__description{
         display: flex;
         justify-content: space-between;
-        margin: 0 4rem;
+        margin: 0 1rem;
+        font-size: 1.25rem;
     }
     &__quantity-section{
         display: flex;
         justify-content: space-between;
         box-sizing: border-box;
-        margin: 1rem 4rem;
+        margin: 0 4rem;
+        margin-bottom: 0.5rem;
     }
     &__size-section{
         display: flex;
         justify-content: space-between;
         box-sizing: border-box;
-        margin: 1rem 4rem;
+        margin: 0.5rem 4rem;
     }
 }
 #size, #quantity{
@@ -46,4 +55,8 @@
     border: solid 1px $color-primary-gold;
     border-radius: $standard-radius;
     font-family: $font-family-primary;
+}
+
+#quantity{
+    margin-bottom: 0.5rem;
 }
