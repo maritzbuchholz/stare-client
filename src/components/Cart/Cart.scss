@@ -23,7 +23,7 @@
         background-color: $color-background-black;
 
         @include tablet{
-            width: 50%;
+            max-width: 30rem;
             border-left: 1px solid $color-primary-gold;
             border-bottom-left-radius: 8px;
             padding: 1.5rem;
