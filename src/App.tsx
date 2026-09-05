@@ -44,7 +44,7 @@ function App() {
     <div className = "app-layout">
       <CartContext.Provider value={{ cart, setCart }}>
         <BrowserRouter>
-            <Background />
+            
             <NavBar cartOpen={cartOpen} setCartOpen={setCartOpen} />
             <Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/>
             <Routes>
@@ -52,6 +52,7 @@ function App() {
                 path="/"
                 element={
                   <>
+                    <Background />
                     <Hero />
                     <About />
                     <Tour />
