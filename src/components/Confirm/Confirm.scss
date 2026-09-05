@@ -1,0 +1,37 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.about{
+    scroll-margin-top: var(--nav-height, #{$nav-height});
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    width: 100%;
+    border: solid 1px $color-primary-gold;
+    border-radius: $standard-radius;
+    background: $color-background-black;
+    padding-bottom: 2rem;
+    text-align: center;
+    margin: 10rem 4rem;
+    @include desktop{
+        max-width: 1200px;
+    }
+    &__title{
+        padding-top: 1rem;
+        color: $color-primary-gold;
+        font-family: $font-family-title;
+    }
+    &__description{
+        color: $color-primary-white;
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 140%;
+        margin-bottom: 1rem;
+    }
+    &__name{
+        color: $color-primary-gold;
+    }
+    &__insta{
+        height: 3rem;
+    }
+}

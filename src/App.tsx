@@ -9,10 +9,12 @@ import About from "./components/About/About";
 import Tour from "./components/Tour/Tour";
 import Merch from "./components/Merch/Merch";
 import Footer from "./components/Footer/Footer";
+import Confirm from "./components/Confirm/Confirm";
 import Product from "./types/productType";
 import type { CartItemType } from "./types/cartType";
 import CartContext from "./context/CartContext";
 import Cart from "./components/Cart/Cart";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 
 function App() {
@@ -41,14 +43,28 @@ function App() {
   return (
     <div className = "app-layout">
       <CartContext.Provider value={{ cart, setCart }}>
-        <Background />
-        <NavBar cartOpen={cartOpen} setCartOpen={setCartOpen} />
-        <Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/>
-        <Hero />
-        <About />
-        <Tour />
-        <Merch products={products} />
-        <Footer />
+        <BrowserRouter>
+            <Background />
+            <NavBar cartOpen={cartOpen} setCartOpen={setCartOpen} />
+            <Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Hero />
+                    <About />
+                    <Tour />
+                    <Merch products={products} />
+                  </>
+                } />
+                <Route
+                  path="/confirm"
+                  element={<Confirm />}
+                />
+              </Routes>
+            <Footer />
+        </BrowserRouter>
       </CartContext.Provider>
     </div>
   )
