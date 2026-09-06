@@ -1,10 +1,18 @@
 @use "./fonts" as *;
 @use "./variables" as *;
 
+html {
+    scroll-behavior: smooth;
+    --nav-height: #{$nav-height};
+}
+
 body {
     font-family: $font-family-primary;
-    color: $color-primary-black;
-    background-color: $color-background-light-grey;
+    color: $color-background-black;
+    background-color: $color-background-black;
     margin: 0;
     box-sizing: border-box;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    font-weight: bold;
 }

@@ -22,7 +22,7 @@ const Event = ({
                     <p className="event__venue">{venue}</p>
                     <p className="event__location">{location}</p>
                 </div>
-                <Button text="Tickets" />
+                <Button text="Tickets" className="event__button" />
             </div>
         </section>
     );

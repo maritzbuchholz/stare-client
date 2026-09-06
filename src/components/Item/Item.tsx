@@ -15,7 +15,7 @@ type ItemProps = {
 const Item = ({product}: ItemProps) => {
     const n = 10;
     const quantityLimit = [...Array(n + 1).keys()];
-    const sizeArray = product.variants.map((variant) => variant.size);
+    const sizeArray = product.variants.map((variant) => variant.size).reverse();
     const {setCart} = useContext(CartContext);
     
     const addToCart = (event: SubmitEvent<HTMLFormElement>) => {
@@ -57,10 +57,8 @@ const Item = ({product}: ItemProps) => {
     return (
         <form onSubmit={addToCart} className = "item">
             <img className = "item__picture" src={product.image_url} alt="Placeholder item photo" />
-            <div className = "item__description">
-                <h3 className = "item__value">{product.name}</h3>
-                <h3 className = "item__value">${(product.price_cents / 100).toFixed(2)}</h3>
-            </div>
+            <h3 className = "item__value item__name">{product.name}</h3>
+            <h3 className = "item__value item__price">${(product.price_cents / 100).toFixed(2)} each</h3>
             <div className = "item__size-section">
                 { sizeArray.length > 1 ?
                     <>

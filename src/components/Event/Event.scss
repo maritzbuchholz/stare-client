@@ -7,16 +7,31 @@
     align-self: center;
     color: $color-primary-white;
     border: 1px solid $color-primary-gold;
-    border-radius: 5px;
+    border-radius: $standard-radius;
     box-sizing: border-box;
     width: 80%;
     padding: 1rem 1rem 2rem 1rem;
     margin: 1rem 0;
+    background: $color-background-black;
     @include tablet{
         padding: 1rem;
     }
     &__top{
-        text-align: start;       
+        text-align: start;
+    }
+    &__date{
+        font-size: 1.5rem;
+        margin: 0;
+    }
+    &__venue{
+        font-size: 1.5rem;
+        color: $color-secondary-cloud;
+        margin: 0;
+    }
+    &__location{
+        font-size: 1.25rem;
+        color: $color-secondary-cloud;
+        margin: 0;
     }
     &__bottom{
         display: flex;
@@ -36,6 +51,11 @@
             flex-direction: row;
             justify-content: space-between;
             margin-bottom: 0;
+            align-items: center;
         }
+    }
+    &__button.button{
+        padding: 0.5rem 2rem;
+        line-height: 140%;
     }
 }

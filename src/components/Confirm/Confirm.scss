@@ -1,19 +1,17 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
-.about{
-    scroll-margin-top: var(--nav-height, #{$nav-height});
+.confirm{
     display: flex;
     align-self: center;
+    justify-content: center;
     flex-direction: column;
-    width: 100%;
-    box-sizing: border-box;
-    border: solid 1px $color-primary-gold;
+    flex: 1;
     border-radius: $standard-radius;
     background: $color-background-black;
     padding-bottom: 2rem;
     text-align: center;
-    margin: 10rem 4rem;
+    margin-top: var(--nav-height, #{$nav-height});
     @include desktop{
         max-width: 1200px;
     }
