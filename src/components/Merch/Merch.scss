@@ -23,10 +23,12 @@
         align-items: center;
         gap: 3rem;
         @include desktop{
-            max-width: 1200px;
+            // Max width fits 3 items (300px + 2rem padding + 2px border each) and 2 gaps, so a 4th wraps to a new row
+            max-width: calc(3 * (300px + 2rem + 2px) + 2 * 3rem);
+            margin: 0 auto;
             flex-direction: row;
-            justify-content: space-evenly;
-            gap: 0;
+            flex-wrap: wrap;
+            justify-content: center;
         }
     }
     &__title{
