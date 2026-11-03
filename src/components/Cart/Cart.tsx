@@ -53,7 +53,7 @@ const Cart = ({ cartOpen, setCartOpen }: CartProps) => {
                 </div>
                 <div className="cart__summary-row">
                     <span>Shipping</span>
-                    <span>Calculated at checkout</span>
+                    <span>Free</span>
                 </div>
                 <div className="cart__summary-row cart__summary-row--total">
                     <span>Total</span>
