@@ -49,7 +49,7 @@ const NavBar = ({ cartOpen, setCartOpen }: NavBarProps) => {
         <header className = "nav" ref={navRef}>
             <div className = "nav__top">
                 <div className = "nav__logo">
-                    <img src={StareLogoTrasparent} alt="Stare Logo" />
+                    <img className = "nav__logo-image" src={StareLogoTrasparent} alt="Stare Logo" />
                 </div>
                 
                 <button className="nav__burger" onClick={() => setMenuOpen(!menuOpen)}>
