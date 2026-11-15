@@ -24,6 +24,11 @@ VITE_API_BASE_URL=http://localhost:<PORT>
 * `VITE_API_BASE_URL` – base URL of the stare-server API. Use the same `PORT` set in the server side `.env` file
 * The server's `CONFIRM` value should match the port the client runs on (Vite defaults to `5173`) so the Stripe success redirect lands back on the client
 
+### Testing Payments with Stripe
+
+* With a Stripe test key, use the test card `4242 4242 4242 4242` at checkout. The rest of the card details (expiry, CVC, ZIP) can be anything valid-looking
+* See the [Stripe testing docs](https://docs.stripe.com/testing) for other test cards and scenarios
+
 ## Common Scripts
 
 * `npm run dev` starts the client in development mode and reloads on changes to the code
