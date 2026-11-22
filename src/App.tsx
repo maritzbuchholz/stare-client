@@ -81,6 +81,10 @@ function App() {
                   path="/error"
                   element={<Error />}
                 />
+                <Route
+                  path="*"
+                  element={<Error />}
+                />
               </Routes>
             <Footer />
         </BrowserRouter>
