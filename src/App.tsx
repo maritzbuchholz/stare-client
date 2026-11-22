@@ -11,6 +11,7 @@ import Merch from "./components/Merch/Merch";
 import Footer from "./components/Footer/Footer";
 import Confirm from "./components/Confirm/Confirm";
 import Product from "./types/productType";
+import Error from "./components/Error/Error";
 import type { CartItemType } from "./types/cartType";
 import CartContext from "./context/CartContext";
 import Cart from "./components/Cart/Cart";
@@ -75,6 +76,10 @@ function App() {
                 <Route
                   path="/confirm"
                   element={<Confirm />}
+                />
+                <Route
+                  path="/error"
+                  element={<Error />}
                 />
               </Routes>
             <Footer />
