@@ -1,5 +1,6 @@
 import "./About.scss";
 import Insta from "../../assets/icons/instagram.svg";
+import { Link } from "react-router-dom";
 
 const About = () => {
     return (
@@ -9,9 +10,9 @@ const About = () => {
             <p className="about__description">A project born in the depths of COVID,
                 <b className="about__name"> Stare</b> aims to strike unease in the heart of its listeners.</p>
             <p className="about__description">Unforgiving and merciless.</p>
-            <a className = "about__insta-link" href="#">
+            <Link className = "about__insta-link" to="/error">
                 <img className = "about__insta" src={Insta} alt="Instragram icon" />
-            </a>
+            </Link>
         </div>
     );
 };

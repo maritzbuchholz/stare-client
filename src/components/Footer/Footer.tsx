@@ -1,5 +1,6 @@
 import NYHC from "../../assets/icons/nyhc.png";
 import Insta from "../../assets/icons/instagram.svg";
+import { Link } from "react-router-dom";
 import "./Footer.scss";
 
 const Footer = () => {
@@ -10,9 +11,9 @@ const Footer = () => {
             </div>
             <div className = "footer__right">
                 <p className = "footer__copyright">© 2026 Stare. All rights reserved.</p>
-                <a className = "footer__insta-link" href="#">
+                <Link className = "footer__insta-link" to="/error">
                     <img className = "footer__insta" src={Insta} alt="Instragram icon" />
-                </a>
+                </Link>
             </div>
         </footer>
     );
