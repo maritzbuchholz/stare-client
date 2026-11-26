@@ -1,0 +1,30 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.error{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    border-radius: $standard-radius;
+    background: $color-background-black;
+    padding-bottom: 2rem;
+    text-align: center;
+    margin-top: var(--nav-height, #{$nav-height});
+    @include desktop{
+        max-width: 1200px;
+    }
+    &__title{
+        padding-top: 1rem;
+        color: $color-primary-gold;
+        font-family: $font-family-title;
+    }
+    &__description{
+        color: $color-primary-white;
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 140%;
+        margin-bottom: 1rem;
+    }
+}

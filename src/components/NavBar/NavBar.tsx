@@ -59,6 +59,7 @@ const NavBar = ({ cartOpen, setCartOpen }: NavBarProps) => {
                 <nav className={"nav__tabs-tablet"}>
                     <Link className='nav__link' to="/#hero">Home</Link>
                     <Link className='nav__link' to="/#about">About</Link>
+                    <Link className='nav__link' to="/#music">Music</Link>
                     <Link className='nav__link' to="/#tour">Tour</Link>
                     <Link className='nav__link' to="/#merch">Merch</Link>
                 </nav>
@@ -73,6 +74,7 @@ const NavBar = ({ cartOpen, setCartOpen }: NavBarProps) => {
             <nav className={`nav__tabs-mobile ${menuOpen ? "nav__tabs-mobile--open" : ""}`}>
                 <Link className='nav__link' to="/#hero">Home</Link>
                 <Link className='nav__link' to="/#about">About</Link>
+                <Link className='nav__link' to="/#music">Music</Link>
                 <Link className='nav__link' to="/#tour">Tour</Link>
                 <Link className='nav__link' to="/#merch">Merch</Link>
             </nav>
