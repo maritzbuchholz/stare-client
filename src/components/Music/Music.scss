@@ -29,4 +29,12 @@
         line-height: 140%;
         margin-bottom: 1rem;
     }
+    &__player{
+        align-self: center;
+        width: 90%;
+        max-width: 700px;
+        height: 120px;
+        border: solid 1px $color-primary-gold;
+        border-radius: $standard-radius;
+    }
 }
