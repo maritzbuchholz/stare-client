@@ -6,6 +6,7 @@ const Music = () => {
     return (
         <div className="music" id="music">
             <h1 className="music__title">Music</h1>
+            <p className="music__description">Help yourself to free bootlegs from our Bandcamp</p>
             <iframe
                 className="music__player"
                 title="Bootleg 1 by Stare"

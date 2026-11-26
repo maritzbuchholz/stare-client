@@ -27,7 +27,7 @@
         margin: 0;
         font-size: 1.5rem;
         line-height: 140%;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
     &__player{
         align-self: center;
@@ -36,5 +36,6 @@
         height: 120px;
         border: solid 1px $color-primary-gold;
         border-radius: $standard-radius;
+        margin-bottom: 1rem;
     }
 }
